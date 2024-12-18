@@ -1,0 +1,15 @@
+
+
+services:
+  medicaldb:
+    image: postgres
+  pgadmin:
+    image: dpage/pgadmin4
+  medicalshop.api:
+    image: ${DOCKER_REGISTRY-}medicalshopapi
+    build:
+      context: .
+      dockerfile: src/Services/shop/MedicalShop.Api/Dockerfile
+volumes:
+    postgres_data:
+    pgadmin_data:
