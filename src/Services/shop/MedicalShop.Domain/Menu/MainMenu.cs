@@ -1,4 +1,7 @@
 ﻿using MedicalShop.Domain.Base;
+using MedicalShop.Domain.News;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +13,17 @@ namespace MedicalShop.Domain.Menu
     public class MainMenu:BaseEntity
     {
         public string Name { get; set; }
-        public string CreatedDate { get; set; }
-        public string UpdatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
+        public class ProductConfiguration : IEntityTypeConfiguration<MainMenu>
+        {
+            public void Configure(EntityTypeBuilder<MainMenu> builder)
+            {
+                builder.HasKey(x => x.ID);
+                builder.Property(p => p.Name).IsRequired();
+                builder.Property(p => p.CreatedDate).IsRequired();
+                builder.Property(p => p.UpdatedDate).IsRequired();
+              }
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using MedicalShop.Domain.Base;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +13,19 @@ namespace MedicalShop.Domain.News
     {
         public string NewsArticleID { get; set; }
 
-        public string UserID { get; set; }
+        public int UserID { get; set; }
         public string Content { get; set; }
-        public string PostedDate { get; set; }
+        public DateTime PostedDate { get; set; }
+        public class ProductConfiguration : IEntityTypeConfiguration<Comment>
+        {
+            public void Configure(EntityTypeBuilder<Comment> builder)
+            {
+                builder.HasKey(x => x.ID);
+                builder.Property(p => p.NewsArticleID).IsRequired();
+                builder.Property(p => p.UserID).IsRequired();
+                builder.Property(p => p.Content).IsRequired();
+                builder.Property(p => p.PostedDate).IsRequired();
+            }
+        }
     }
 }
