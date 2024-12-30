@@ -17,7 +17,7 @@ namespace MedicalShop.Domain.News
         public string Bio { get; set; }
         public string ProfilePictureURL { get; set; }
 
-        public class ProductConfiguration : IEntityTypeConfiguration<Author>
+        public class AuthorConfiguration : IEntityTypeConfiguration<Author>
         {
             public void Configure(EntityTypeBuilder<Author> builder)
             {

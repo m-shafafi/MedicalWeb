@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shop", "Shop", "{26A93D0E-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Domain", "src\Services\shop\MedicalShop.Domain\MedicalShop.Domain.csproj", "{BAEB428E-BE46-417B-B176-B5970FFBB040}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Persistence", "src\Services\shop\MedicalShop.Persistence\MedicalShop.Persistence.csproj", "{45D8E93D-5E14-40B1-9ED0-BE3CBF1DBCE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Application", "src\Services\shop\MedicalShop.Persistence\MedicalShop.Application.csproj", "{45D8E93D-5E14-40B1-9ED0-BE3CBF1DBCE8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Infrastructure", "src\Services\shop\MedicalShop.Infrastructure\MedicalShop.Infrastructure.csproj", "{C7A4A95A-E48E-4437-99DF-415D262611FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalShop.Api", "src\Services\shop\MedicalShop.Api\MedicalShop.Api.csproj", "{CABE756D-268D-428A-BDAE-4FAAE2E9DE7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Api", "src\Services\shop\MedicalShop.Api\MedicalShop.Api.csproj", "{CABE756D-268D-428A-BDAE-4FAAE2E9DE7C}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9B478CD3-2939-455F-89A6-8CA1E0976778}"
 EndProject

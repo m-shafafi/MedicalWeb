@@ -11,20 +11,33 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Infrastructure
 {
-    public class ApplicationDbContext:DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions options):base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-                
+
         }
-        public DbSet<Product> products { get; set; }
-        public DbSet<Domain.Products.Category> category { get; set; }
-        public DbSet<Brand> brand { get; set; }
-        public DbSet<Domain.News.NewsArticle> newsArticle { get; set; }
-        public DbSet<Domain.News.Category> categoryNews { get; set; }
-        public DbSet<Domain.News.Comment> comment { get; set; }
-        public DbSet<Domain.News.Author> author { get; set; }
-        public DbSet<Domain.Menu.MainMenu> mainMenu { get; set; }
-        public DbSet<Domain.Menu.MainMenu> categoryMenu { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Domain.Products.Category> Categories { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Domain.News.NewsArticle> NewsArticles { get; set; }
+        public DbSet<Domain.News.Category> NewsCategories { get; set; }
+        public DbSet<Domain.News.Comment> Comments { get; set; }
+        public DbSet<Domain.News.Author> Authors { get; set; }
+        public DbSet<Domain.Menu.MainMenu> MainMenus { get; set; }
+        public DbSet<Domain.Menu.MainMenu> CategoryMenus { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new Product.ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new Domain.Products.Category.ProductCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new Domain.Products.Brand.ProductBrandConfiguration());
+            modelBuilder.ApplyConfiguration(new Domain.News.Author.AuthorConfiguration());
+            modelBuilder.ApplyConfiguration(new Domain.News.Category.CategoryNewsConfiguration());
+            modelBuilder.ApplyConfiguration(new Domain.News.Comment.CommentNewsConfiguration());
+            modelBuilder.ApplyConfiguration(new Domain.News.NewsArticle.NewsArticleNewsConfiguration());
+            modelBuilder.ApplyConfiguration(new Domain.Menu.MainMenu.MainMenuConfiguration());
+            modelBuilder.ApplyConfiguration(new Domain.Menu.Category.CategoryMenuConfiguration());
+        }
     }
 }

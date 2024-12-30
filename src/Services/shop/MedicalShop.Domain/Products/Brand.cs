@@ -16,7 +16,7 @@ namespace MedicalShop.Domain.Products
         public string LogoURL { get; set; }
         public string Description { get; set; }
 
-        public class ProductConfiguration : IEntityTypeConfiguration<Brand>
+        public class ProductBrandConfiguration : IEntityTypeConfiguration<Brand>
         {
             public void Configure(EntityTypeBuilder<Brand> builder)
             {

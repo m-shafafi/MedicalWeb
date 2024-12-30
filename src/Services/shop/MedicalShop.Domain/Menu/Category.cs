@@ -14,7 +14,7 @@ namespace MedicalShop.Domain.Menu
         public string Name { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
-        public class ProductConfiguration : IEntityTypeConfiguration<Category>
+        public class CategoryMenuConfiguration : IEntityTypeConfiguration<Category>
         {
             public void Configure(EntityTypeBuilder<Category> builder)
             {

@@ -24,7 +24,7 @@ namespace MedicalShop.Domain.News
         public string Comments { get; set; }   //لیستی از نظرات کاربران
         public string ShareableLink { get; set; }  //لینک اختصاصی برای اشتراک‌گذاری خبر
 
-        public class ProductConfiguration : IEntityTypeConfiguration<NewsArticle>
+        public class NewsArticleNewsConfiguration : IEntityTypeConfiguration<NewsArticle>
         {
             public void Configure(EntityTypeBuilder<NewsArticle> builder)
             {

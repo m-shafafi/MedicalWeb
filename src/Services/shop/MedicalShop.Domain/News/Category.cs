@@ -18,7 +18,7 @@ namespace MedicalShop.Domain.News
         public string Slug { get; set; }   //آدرس یکتا برای دسته‌بندی که در URL استفاده می‌شود (مثلاً "medical-news" برای دسته‌بندی اخبار پزشکی).
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
-        public class ProductConfiguration : IEntityTypeConfiguration<Category>
+        public class CategoryNewsConfiguration : IEntityTypeConfiguration<Category>
         {
             public void Configure(EntityTypeBuilder<Category> builder)
             {

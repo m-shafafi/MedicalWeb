@@ -15,7 +15,7 @@ namespace MedicalShop.Domain.Products
 
         public string Description { get; set; }
         public int ParentCategoryID { get; set; }//در صورتی که دسته‌بندی به عنوان زیرمجموعه‌ی دسته دیگری باشد، این فیلد مشخص می‌کند که والد آن چیست.
-        public class ProductConfiguration : IEntityTypeConfiguration<Category>
+        public class ProductCategoryConfiguration : IEntityTypeConfiguration<Category>
         {
             public void Configure(EntityTypeBuilder<Category> builder)
             {

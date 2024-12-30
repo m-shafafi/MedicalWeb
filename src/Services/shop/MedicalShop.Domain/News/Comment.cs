@@ -16,7 +16,7 @@ namespace MedicalShop.Domain.News
         public int UserID { get; set; }
         public string Content { get; set; }
         public DateTime PostedDate { get; set; }
-        public class ProductConfiguration : IEntityTypeConfiguration<Comment>
+        public class CommentNewsConfiguration : IEntityTypeConfiguration<Comment>
         {
             public void Configure(EntityTypeBuilder<Comment> builder)
             {
