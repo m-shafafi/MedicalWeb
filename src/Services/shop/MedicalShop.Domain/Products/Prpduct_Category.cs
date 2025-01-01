@@ -9,15 +9,15 @@ using MedicalShop.Domain.Base;
 
 namespace MedicalShop.Domain.Products
 {
-    public class Category:BaseEntity
+    public class Prpduct_Category:BaseEntity
     {
         public string Name { get; set; }
 
         public string Description { get; set; }
         public int ParentCategoryID { get; set; }//در صورتی که دسته‌بندی به عنوان زیرمجموعه‌ی دسته دیگری باشد، این فیلد مشخص می‌کند که والد آن چیست.
-        public class ProductCategoryConfiguration : IEntityTypeConfiguration<Category>
+        public class ProductCategoryConfiguration : IEntityTypeConfiguration<Prpduct_Category>
         {
-            public void Configure(EntityTypeBuilder<Category> builder)
+            public void Configure(EntityTypeBuilder<Prpduct_Category> builder)
             {
                 builder.HasKey(x => x.ID);
                 builder.Property(p => p.Name).IsRequired();

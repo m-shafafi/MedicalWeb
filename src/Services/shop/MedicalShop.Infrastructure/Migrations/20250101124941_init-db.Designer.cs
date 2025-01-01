@@ -3,6 +3,7 @@ using System;
 using MedicalShop.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MedicalShop.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250101124941_init-db")]
+    partial class initdb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,8 +85,6 @@ namespace MedicalShop.Infrastructure.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CategoryID");
-
                     b.ToTable("products");
                 });
 
@@ -99,12 +100,14 @@ namespace MedicalShop.Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("MOdificationDateTime")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("ParentCategoryID")
@@ -112,18 +115,7 @@ namespace MedicalShop.Infrastructure.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Prpduct_Category");
-                });
-
-            modelBuilder.Entity("MedicalShop.Domain.Products.Product", b =>
-                {
-                    b.HasOne("MedicalShop.Domain.Products.Prpduct_Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
+                    b.ToTable("categories");
                 });
 #pragma warning restore 612, 618
         }

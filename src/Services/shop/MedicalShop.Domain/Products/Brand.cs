@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.Products
 {
-    public class Brand : BaseEntity
+    public class Product_Brand : BaseEntity
     {
         public string Name { get; set; }
         public string LogoURL { get; set; }
         public string Description { get; set; }
 
-        public class ProductBrandConfiguration : IEntityTypeConfiguration<Brand>
+        public class ProductBrandConfiguration : IEntityTypeConfiguration<Product_Brand>
         {
-            public void Configure(EntityTypeBuilder<Brand> builder)
+            public void Configure(EntityTypeBuilder<Product_Brand> builder)
             {
                 builder.HasKey(x => x.ID);
                 builder.Property(p => p.Name).IsRequired();
