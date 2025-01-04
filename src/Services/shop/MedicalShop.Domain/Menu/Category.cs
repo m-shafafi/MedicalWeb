@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.Menu
 {
-    public class Category:BaseEntity
+    public class Menu_Category : BaseEntity
     {
         public string Name { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
-        public class CategoryMenuConfiguration : IEntityTypeConfiguration<Category>
+        public class CategoryMenuConfiguration : IEntityTypeConfiguration<Menu_Category>
         {
-            public void Configure(EntityTypeBuilder<Category> builder)
+            public void Configure(EntityTypeBuilder<Menu_Category> builder)
             {
                 builder.HasKey(x => x.ID);
                 builder.Property(p => p.Name).IsRequired();

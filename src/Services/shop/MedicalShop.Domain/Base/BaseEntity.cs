@@ -9,8 +9,8 @@ namespace MedicalShop.Domain.Base
     public abstract class BaseEntity<TKey>
     {
         public TKey ID { get; set; }
-        public DateTime CreationDateTime { get; set; }
-        public DateTime MOdificationDateTime { get; set; }
+        public DateTime CreationDateTime { get; set; } = DateTime.UtcNow;
+        public DateTime MOdificationDateTime { get; set; } = DateTime.UtcNow;
     }
     public abstract class BaseEntity : BaseEntity<int>
     {

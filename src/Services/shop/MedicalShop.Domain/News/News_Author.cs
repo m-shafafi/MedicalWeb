@@ -10,21 +10,22 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.News
 {
-    public class Author:BaseEntity
+    public class News_Author : BaseEntity
     {
         public string Name { get; set; }
 
         public string Bio { get; set; }
         public string ProfilePictureURL { get; set; }
+        public ICollection<News_Article> Articles { get; set; } // Navigation property
 
-        public class AuthorConfiguration : IEntityTypeConfiguration<Author>
+        public class AuthorConfiguration : IEntityTypeConfiguration<News_Author>
         {
-            public void Configure(EntityTypeBuilder<Author> builder)
+            public void Configure(EntityTypeBuilder<News_Author> builder)
             {
                 builder.HasKey(x => x.ID);
-                builder.Property(p => p.Name).IsRequired();
-                builder.Property(p => p.Bio).IsRequired();
-                builder.Property(p => p.ProfilePictureURL).IsRequired();
+                builder.Property(p => p.Name).IsRequired().HasMaxLength(200);
+                builder.Property(p => p.Bio).HasMaxLength(500);
+                builder.Property(p => p.ProfilePictureURL).HasMaxLength(300);
             }
         }
     }

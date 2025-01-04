@@ -9,22 +9,24 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.News
 {
-    public class Comment:BaseEntity
+    public class News_Comment : BaseEntity
     {
         public string NewsArticleID { get; set; }
 
         public int UserID { get; set; }
         public string Content { get; set; }
         public DateTime PostedDate { get; set; }
-        public class CommentNewsConfiguration : IEntityTypeConfiguration<Comment>
+        public News_Article Article { get; set; } // Navigation property
+
+        public class CommentNewsConfiguration : IEntityTypeConfiguration<News_Comment>
         {
-            public void Configure(EntityTypeBuilder<Comment> builder)
+            public void Configure(EntityTypeBuilder<News_Comment> builder)
             {
                 builder.HasKey(x => x.ID);
                 builder.Property(p => p.NewsArticleID).IsRequired();
                 builder.Property(p => p.UserID).IsRequired();
-                builder.Property(p => p.Content).IsRequired();
-                builder.Property(p => p.PostedDate).IsRequired();
+                builder.Property(p => p.Content).IsRequired().HasMaxLength(1000);
+                builder.Property(p => p.PostedDate).HasDefaultValueSql("CURRENT_TIMESTAMP");
             }
         }
     }
