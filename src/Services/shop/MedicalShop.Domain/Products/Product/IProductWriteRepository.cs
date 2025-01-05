@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MedicalShop.Domain.Products.Models;
 
 namespace MedicalShop.Domain.Products.Product
 {
     public interface IProductWriteRepository
     {
-        Task<Product> AddAsync(Product product);
-        Task<Product> UpdateAsync(Product product);
-        Task DeleteAsync(Product product);
+        Task<ProductEntity> AddAsync(ProductEntity product);
+        Task<ProductEntity> UpdateAsync(ProductEntity product);
+        Task DeleteAsync(ProductEntity product);
     }
 }

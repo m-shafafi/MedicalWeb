@@ -1,8 +1,7 @@
 ﻿using MedicalShop.Domain.Menu;
-using MedicalShop.Domain.News;
-using MedicalShop.Domain.Products.Brand;
-using MedicalShop.Domain.Products.Category;
-using MedicalShop.Domain.Products.Product;
+using MedicalShop.Domain.Menu.Models;
+using MedicalShop.Domain.News.Models;
+using MedicalShop.Domain.Products.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,7 +19,7 @@ namespace MedicalShop.Infrastructure
         {
 
         }
-        public DbSet<Product> products { get; set; }
+        public DbSet<ProductEntity> products { get; set; }
         public DbSet<Product_Category> category { get; set; }
         public DbSet<Product_Brand> brands { get; set; }
         public DbSet<News_Article> newsArticles { get; set; }
@@ -32,7 +31,7 @@ namespace MedicalShop.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new Product.ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductEntity.ProductConfiguration());
             modelBuilder.ApplyConfiguration(new Product_Category.ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new Product_Brand.ProductBrandConfiguration());
             modelBuilder.ApplyConfiguration(new News_Author.AuthorConfiguration());

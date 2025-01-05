@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalShop.Domain.News
+namespace MedicalShop.Domain.News.Models
 {
     public class News_Comment : BaseEntity
     {

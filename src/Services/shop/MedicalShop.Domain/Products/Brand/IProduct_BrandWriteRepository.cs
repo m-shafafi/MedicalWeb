@@ -1,4 +1,4 @@
-﻿using MedicalShop.Domain.Products.Brand;
+﻿using MedicalShop.Domain.Products.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

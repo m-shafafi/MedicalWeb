@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalShop.Domain.Products.Brand
+namespace MedicalShop.Domain.Products.Models
 {
     public class Product_Brand : BaseEntity
     {
         public string Name { get; set; }
         public string LogoURL { get; set; }
         public string Description { get; set; }
-        public ICollection<Product> Products { get; set; } // Navigation property
+        public ICollection<ProductEntity> Products { get; set; } // Navigation property
 
         public class ProductBrandConfiguration : IEntityTypeConfiguration<Product_Brand>
         {

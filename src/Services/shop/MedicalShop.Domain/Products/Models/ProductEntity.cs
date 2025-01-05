@@ -1,18 +1,10 @@
 ﻿using MedicalShop.Domain.Base;
-using MedicalShop.Domain.Products.Brand;
-using MedicalShop.Domain.Products.Category;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading.Tasks.Dataflow;
 
-namespace MedicalShop.Domain.Products.Product
+namespace MedicalShop.Domain.Products.Models
 {
-    public class Product : BaseEntity
+    public class ProductEntity : BaseEntity
     {
         public string Name { get; set; }
 
@@ -29,9 +21,9 @@ namespace MedicalShop.Domain.Products.Product
         public Product_Brand Brand { get; set; } // Renamed for clarity
 
 
-        public class ProductConfiguration : IEntityTypeConfiguration<Product>
+        public class ProductConfiguration : IEntityTypeConfiguration<ProductEntity>
         {
-            public void Configure(EntityTypeBuilder<Product> builder)
+            public void Configure(EntityTypeBuilder<ProductEntity> builder)
             {
                 builder.HasKey(x => x.ID);
                 builder.Property(p => p.Name).IsRequired().HasMaxLength(200);

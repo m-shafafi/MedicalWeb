@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalShop.Domain.Menu
+namespace MedicalShop.Domain.Menu.Models
 {
     public class Menu_MainMenu : BaseEntity
     {
@@ -23,7 +23,7 @@ namespace MedicalShop.Domain.Menu
                 builder.Property(p => p.Name).IsRequired();
                 builder.Property(p => p.CreatedDate).IsRequired();
                 builder.Property(p => p.UpdatedDate).IsRequired();
-              }
+            }
         }
     }
 }
