@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.Products
 {
-    public interface IProductWriteRepository
+    public interface ProductWriteRepository: IProductWriteRepository
     {
         #region 
         Task<ProductEntity> AddProductCategoriesAsync(ProductEntity Product_Category);
