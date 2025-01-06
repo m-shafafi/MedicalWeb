@@ -11,9 +11,11 @@ namespace MedicalShop.Domain.Products
 {
     public interface IProductWriteRepository
     {
+        #region 
         Task<ProductEntity> AddProductCategoriesAsync(ProductEntity Product_Category);
         Task<ProductEntity> UpdateProductCategoriesAsync(ProductEntity Product_Category);
         Task DeleteProductCategoriesAsync(ProductEntity Product_Category);
+        #endregion
         #region 
         Task<ProductEntity> AddProductAsync(ProductEntity Product_Category);
         Task<ProductEntity> UpdateProductAsync(ProductEntity Product_Category);
