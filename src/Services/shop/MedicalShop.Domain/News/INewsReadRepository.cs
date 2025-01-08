@@ -7,7 +7,7 @@ using MedicalShop.Domain.News.Models;
 
 namespace MedicalShop.Domain.News.Article
 {
-    public interface INews_Author_CategoryReadRepository
+    public interface INewsReadRepository
     {
         Task<List<News_Article>> GetAllAsync();
         Task<News_Article> GetAsync();

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.Menu
 {
-    public interface IProductWriteRepository
+    public interface IMenuWriteRepository
     {
         Task<Menu_Category> AddMenuCategoriesAsync(Menu_Category Product_Category);
         Task<Menu_Category> UpdateMenuCategoriesAsync(Menu_Category Product_Category);

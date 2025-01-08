@@ -9,22 +9,13 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.Products
 {
-    public interface ProductWriteRepository: IProductWriteRepository
+    public interface IProducReadRepository
     {
         #region 
-        Task<ProductEntity> AddProductCategoriesAsync(ProductEntity Product_Category);
-        Task<ProductEntity> UpdateProductCategoriesAsync(ProductEntity Product_Category);
-        Task DeleteProductCategoriesAsync(ProductEntity Product_Category);
-        #endregion
-        #region 
-        Task<ProductEntity> AddProductAsync(ProductEntity Product_Category);
-        Task<ProductEntity> UpdateProductAsync(ProductEntity Product_Category);
-        Task DeleteProductAsync(ProductEntity Product_Category);
-        #endregion
-        #region 
-        Task<Product_Brand> AddBrandAsync(Product_Brand Product_Category);
-        Task<Product_Brand> UpdateBrandAsync(Product_Brand Product_Category);
-        Task DeleteBrandAsync(Product_Brand Product_Category);
+        Task<List<Menu_Category>> FetchAllMenuCategoriesAsync();
+        Task<Menu_Category> FetchMenuCategoriesAsync();
+        Task<List<Menu_MainMenu>> FetchAllMenuAsync();
+        Task<Menu_MainMenu> FetchMenuAsync();
         #endregion
     }
 }

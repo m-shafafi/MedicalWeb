@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalShop.Domain.Menu
+namespace MedicalShop.Domain.News
 {
-    public interface IMenuReadRepository
+    public interface NewsReadRepository
     {
         Task<List<Menu_Category>> FetchAllMenuCategoriesAsync();
         Task<Menu_Category> FetchMenuCategoriesAsync();
