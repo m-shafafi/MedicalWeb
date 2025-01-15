@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Infrastructure.Products
 {
-    public class NewsWriteRepository: INewsWriteRepository
+    public class ProductWriteRepository : IProductWriteRepository
     {
         private readonly ApplicationDbContext _dbContext;
-        public NewsWriteRepository(ApplicationDbContext dbContext)
+        public ProductWriteRepository(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
