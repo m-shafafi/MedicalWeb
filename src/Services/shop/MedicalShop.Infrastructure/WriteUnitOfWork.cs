@@ -41,6 +41,7 @@ namespace MedicalShop.Infrastructure
         {
             get
             {
+
                 return _MenuWriteRepository ??= new MenuWriteRepository(_context);
             }
         }
