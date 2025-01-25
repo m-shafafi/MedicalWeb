@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalShop.Domain
+namespace MedicalShop.Domain.UnitOfWork.Product
 {
-    public interface IReadUnitOfWork
+    public class IReadUnitOfWork
     {
         IProductReadRepository ProductReadRepository { get; }
         INewsReadRepository NewsReadRepository { get; }
