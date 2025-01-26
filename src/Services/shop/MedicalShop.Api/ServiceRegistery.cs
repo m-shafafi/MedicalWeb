@@ -1,5 +1,7 @@
-﻿using MedicalShop.Infrastructure;
+﻿using MedicalShop.Domain.UnitOfWork.Product;
+using MedicalShop.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace MedicalShop.Api
 {
@@ -9,9 +11,19 @@ namespace MedicalShop.Api
            builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+                options.JsonSerializerOptions.WriteIndented = true;
+            });
+            return builder.Services;
+        }
+        public static IServiceCollection AddInfrastructureServices(this WebApplicationBuilder builder)
+        {
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
-                                        option.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+                                   option.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddScoped<IReadUnitOfWork,ReadUnitOfWork>();
+            builder.Services.AddScoped<IWriteUnitOfWork,WriteUnitOfWork>();
 
             return builder.Services;
         }
