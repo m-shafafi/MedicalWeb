@@ -18,9 +18,9 @@ namespace MedicalShop.Infrastructure
         private IMenuWriteRepository _MenuWriteRepository;
         private INewsWriteRepository _NewsWriteRepository;
         private readonly ApplicationDbContext _context;
-        public WriteUnitOfWork(ApplicationDbContext cpntext)
+        public WriteUnitOfWork(ApplicationDbContext context)
         {
-            _context = cpntext;
+            _context = context;
         }
         public IProductWriteRepository ProductWriteRepository{
             get
