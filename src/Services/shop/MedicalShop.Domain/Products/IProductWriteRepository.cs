@@ -13,9 +13,9 @@ namespace MedicalShop.Domain.Products
     public interface IProductWriteRepository
     {
         #region 
-        Task<Product_Category> AddProductCategoriesAsync(Product_Category product_Category);
-        Task<Product_Category> UpdateProductCategoriesAsync(Product_Category product_Category);
-        Task DeleteProductCategoriesAsync(Product_Category product_Category);
+        Task<ProductCategory> AddProductCategoriesAsync(ProductCategory ProductCategory);
+        Task<ProductCategory> UpdateProductCategoriesAsync(ProductCategory ProductCategory);
+        Task DeleteProductCategoriesAsync(ProductCategory ProductCategory);
         #endregion
         #region 
         Task<ProductEntity> AddProductAsync(ProductEntity productEntity);
@@ -24,9 +24,9 @@ namespace MedicalShop.Domain.Products
 
         #endregion
         #region 
-        Task<Product_Brand> AddBrandAsync(Product_Brand product_Brand);
-        Task<Product_Brand> UpdateBrandAsync(Product_Brand product_Brand);
-        Task DeleteBrandAsync(Product_Brand product_Brand);
+        Task<ProductBrand> AddBrandAsync(ProductBrand ProductBrand);
+        Task<ProductBrand> UpdateBrandAsync(ProductBrand ProductBrand);
+        Task DeleteBrandAsync(ProductBrand ProductBrand);
         #endregion
 
     }

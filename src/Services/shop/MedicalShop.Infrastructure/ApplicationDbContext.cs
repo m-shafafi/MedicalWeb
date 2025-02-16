@@ -20,8 +20,8 @@ namespace MedicalShop.Infrastructure
 
         }
         public DbSet<ProductEntity> products { get; set; }
-        public DbSet<Product_Category> category { get; set; }
-        public DbSet<Product_Brand> brands { get; set; }
+        public DbSet<ProductCategory> category { get; set; }
+        public DbSet<ProductBrand> brands { get; set; }
         public DbSet<News_Article> newsArticles { get; set; }
         public DbSet<News_Category> newsCategories { get; set; }
         public DbSet<News_Comment> comments { get; set; }
@@ -32,8 +32,8 @@ namespace MedicalShop.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ProductEntity.ProductConfiguration());
-            modelBuilder.ApplyConfiguration(new Product_Category.ProductCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new Product_Brand.ProductBrandConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductCategory.ProductCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductBrand.ProductBrandConfiguration());
             modelBuilder.ApplyConfiguration(new News_Author.AuthorConfiguration());
             modelBuilder.ApplyConfiguration(new News_Category.CategoryNewsConfiguration());
             modelBuilder.ApplyConfiguration(new News_Comment.CommentNewsConfiguration());

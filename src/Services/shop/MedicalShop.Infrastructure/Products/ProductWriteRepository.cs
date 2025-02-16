@@ -11,21 +11,21 @@ namespace MedicalShop.Infrastructure.Products
             _dbContext = dbContext;
         }
         #region 
-        public async Task<Product_Category> AddProductCategoriesAsync(Product_Category product_Category)
+        public async Task<ProductCategory> AddProductCategoriesAsync(ProductCategory ProductCategory)
         {
-            var result = await _dbContext.AddAsync(product_Category);
+            var result = await _dbContext.AddAsync(ProductCategory);
             await _dbContext.SaveChangesAsync();
             return result.Entity;
         }
-        public async Task<Product_Category> UpdateProductCategoriesAsync(Product_Category product_Category)
+        public async Task<ProductCategory> UpdateProductCategoriesAsync(ProductCategory ProductCategory)
         {
-            var result = _dbContext.Update(product_Category);
+            var result = _dbContext.Update(ProductCategory);
             await _dbContext.SaveChangesAsync();
             return result.Entity;
         }
-        public async Task DeleteProductCategoriesAsync(Product_Category product_Category)
+        public async Task DeleteProductCategoriesAsync(ProductCategory ProductCategory)
         {
-            _dbContext.category.Remove(product_Category);
+            _dbContext.category.Remove(ProductCategory);
             await _dbContext.SaveChangesAsync();
         }
         #endregion
@@ -49,21 +49,21 @@ namespace MedicalShop.Infrastructure.Products
         }
         #endregion
         #region 
-        public async Task<Product_Brand> AddBrandAsync(Product_Brand product_Brand)
+        public async Task<ProductBrand> AddBrandAsync(ProductBrand ProductBrand)
         {
-            var result = await _dbContext.AddAsync(product_Brand);
+            var result = await _dbContext.AddAsync(ProductBrand);
             await _dbContext.SaveChangesAsync();
             return result.Entity;
         }
-        public async Task<Product_Brand> UpdateBrandAsync(Product_Brand product_Brand)
+        public async Task<ProductBrand> UpdateBrandAsync(ProductBrand ProductBrand)
         {
-            var result = _dbContext.Update(product_Brand);
+            var result = _dbContext.Update(ProductBrand);
             await _dbContext.SaveChangesAsync();
             return result.Entity;
         }
-        public async Task DeleteBrandAsync(Product_Brand product_Brand)
+        public async Task DeleteBrandAsync(ProductBrand ProductBrand)
         {
-            _dbContext.brands.Remove(product_Brand);
+            _dbContext.brands.Remove(ProductBrand);
             await _dbContext.SaveChangesAsync();
         }
         #endregion

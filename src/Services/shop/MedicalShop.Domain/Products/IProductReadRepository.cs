@@ -12,12 +12,12 @@ namespace MedicalShop.Domain.Menu
     public interface IProductReadRepository
     {
         #region
-        Task<List<Product_Category>> FetchAllProductCategoryAsync();
-        Task<Product_Category> FetchProductCategoryAsync(int id);
+        Task<List<ProductCategory>> FetchAllProductCategoryAsync();
+        Task<ProductCategory> FetchProductCategoryAsync(int id);
         #endregion
         #region
-        Task<List<Product_Brand>> FetchAllProductBrandAsync();
-        Task<Product_Brand> FetchProductBrandAsync(int id);
+        Task<List<ProductBrand>> FetchAllProductBrandAsync();
+        Task<ProductBrand> FetchProductBrandAsync(int id);
         #endregion
         #region
         Task<List<ProductEntity>> FetchAllProductEntityAsync();

@@ -20,26 +20,26 @@ namespace MedicalShop.Domain.Menu
             _dbContext = dbContext;
         }
 
-        public async Task<List<Product_Category>> FetchAllProductCategoryAsync()
+        public async Task<List<ProductCategory>> FetchAllProductCategoryAsync()
         {
             return await _dbContext.category.Include(p => p.Products).ToListAsync();
         }
-        public async Task<Product_Category> FetchProductCategoryAsync(int id)
+        public async Task<ProductCategory> FetchProductCategoryAsync(int id)
         {
             return await _dbContext.category.FirstOrDefaultAsync(p => p.ID == id);
         }
-        public async Task<List<Product_Brand>> FetchAllProductBrandAsync()
+        public async Task<List<ProductBrand>> FetchAllProductBrandAsync()
         {
             return await _dbContext.brands.Include(p => p.Name).ToListAsync();
         }
-        public async Task<Product_Brand> FetchProductBrandAsync(int id)
+        public async Task<ProductBrand> FetchProductBrandAsync(int id)
         {
             return await _dbContext.brands.FirstOrDefaultAsync(p => p.ID == id);
 
         }
         public async Task<List<ProductEntity>> FetchAllProductEntityAsync()
         {
-            return await _dbContext.products.Include(p => p.product_Category).ToListAsync();
+            return await _dbContext.products.Include(p => p.ProductBrand).ToListAsync();
         }
         public async Task<ProductEntity> FetchProductEntityAsync(int id)
         {
