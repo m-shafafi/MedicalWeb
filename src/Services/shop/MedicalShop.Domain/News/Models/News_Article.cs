@@ -21,9 +21,9 @@ namespace MedicalShop.Domain.News.Models
         public string Tags { get; set; }
         public string ImageURL { get; set; }
         public long ViewsCount { get; set; }
-        public News_Author Author { get; set; } // Navigation property
-        public News_Category Category { get; set; } // Navigation property
-        public ICollection<News_Comment> Comments { get; set; } // Navigation property
+        public News_Author news_Author { get; set; } // Navigation property
+        public News_Category news_Category { get; set; } // Navigation property
+        public ICollection<News_Comment> news_Comments  { get; set; } // Navigation property
 
         public class NewsArticleNewsConfiguration : IEntityTypeConfiguration<News_Article>
         {
@@ -39,12 +39,12 @@ namespace MedicalShop.Domain.News.Models
                 builder.Property(p => p.ViewsCount).HasDefaultValue(0);
 
                 // Relationships
-                builder.HasOne(p => p.Author)
-                       .WithMany(a => a.Articles)
+                builder.HasOne(p => p.news_Author)
+                       .WithMany(a => a.news_Articles)
                        .HasForeignKey(p => p.AuthorID);
 
-                builder.HasOne(p => p.Category)
-                       .WithMany(c => c.Articles)
+                builder.HasOne(p => p.news_Category)
+                       .WithMany(c => c.news_Articles)
                        .HasForeignKey(p => p.CategoryID);
             }
         }

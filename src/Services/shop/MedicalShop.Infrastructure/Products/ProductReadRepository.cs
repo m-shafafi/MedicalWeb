@@ -39,7 +39,7 @@ namespace MedicalShop.Domain.Menu
         }
         public async Task<List<ProductEntity>> FetchAllProductEntityAsync()
         {
-            return await _dbContext.products.Include(p => p.Category).ToListAsync();
+            return await _dbContext.products.Include(p => p.product_Category).ToListAsync();
         }
         public async Task<ProductEntity> FetchProductEntityAsync(int id)
         {

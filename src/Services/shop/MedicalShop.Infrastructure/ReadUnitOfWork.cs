@@ -15,14 +15,15 @@ namespace MedicalShop.Infrastructure
 {
     public class ReadUnitOfWork : IReadUnitOfWork
     {
-        private IProductReadRepository _productReadRepository;
-        private IMenuReadRepository _menuReadRepository;
-        private INewsReadRepository _newsReadRepository;
+
         private readonly ApplicationDbContext _context;
         public ReadUnitOfWork(ApplicationDbContext context)
         {
             _context = context;
         }
+        private ProductReadRepository _productReadRepository;
+        private MenuReadRepository _menuReadRepository;
+        private NewsReadRepository _newsReadRepository;
         public IProductReadRepository ProductReadRepository
         {
             get

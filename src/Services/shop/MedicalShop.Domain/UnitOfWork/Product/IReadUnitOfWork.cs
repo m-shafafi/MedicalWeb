@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.UnitOfWork.Product
 {
-    public class IReadUnitOfWork
+    public interface IReadUnitOfWork
     {
         IProductReadRepository ProductReadRepository { get; }
         INewsReadRepository NewsReadRepository { get; }

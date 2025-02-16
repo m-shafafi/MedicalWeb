@@ -16,7 +16,7 @@ namespace MedicalShop.Domain.News.Models
 
         public string Bio { get; set; }
         public string ProfilePictureURL { get; set; }
-        public ICollection<News_Article> Articles { get; set; } // Navigation property
+        public ICollection<News_Article> news_Articles { get; set; } // Navigation property
 
         public class AuthorConfiguration : IEntityTypeConfiguration<News_Author>
         {

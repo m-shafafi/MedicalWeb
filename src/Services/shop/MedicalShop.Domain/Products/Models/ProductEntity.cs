@@ -17,9 +17,8 @@ namespace MedicalShop.Domain.Products.Models
         public string Warranty { get; set; }//مدت زمان گارانتی و شرایط آن
         public int Rating { get; set; }//میانگین امتیاز محصول از طرف کاربران.
         public int CategoryID { get; set; }
-        public Product_Category Category { get; set; } // Fixed class name
-        public Product_Brand Brand { get; set; } // Renamed for clarity
-
+        public Product_Category product_Category { get; set; } // Fixed class name
+        public Product_Brand product_Brand { get; set; }
 
         public class ProductConfiguration : IEntityTypeConfiguration<ProductEntity>
         {
@@ -36,11 +35,11 @@ namespace MedicalShop.Domain.Products.Models
                 builder.Property(p => p.Rating).HasDefaultValue(0);
 
                 // Relationships
-                builder.HasOne(p => p.Category)
+                builder.HasOne(p => p.product_Category)
                        .WithMany(c => c.Products)
                        .HasForeignKey(p => p.CategoryID);
 
-                builder.HasOne(p => p.Brand)
+                builder.HasOne(p => p.product_Brand)
                        .WithMany(b => b.Products)
                        .HasForeignKey(p => p.BrandID);
             }

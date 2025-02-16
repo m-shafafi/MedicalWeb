@@ -23,4 +23,8 @@
     <ProjectReference Include="..\MedicalShop.Domain\MedicalShop.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SeedData\" />
+  </ItemGroup>
+
 </Project>
