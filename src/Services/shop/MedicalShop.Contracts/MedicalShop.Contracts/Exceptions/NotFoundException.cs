@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalShop.Application
+namespace MedicalShop.Contracts.Exceptions
 {
-    public class Class1
-    {
-    }
+    public class NotFoundException(string message) : Exception(message);
 }

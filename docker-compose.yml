@@ -1,15 +1,48 @@
-
-
 services:
-  medicaldb:
-    image: postgres
-  pgadmin:
-    image: dpage/pgadmin4
-  medicalshop.api:
-    image: ${DOCKER_REGISTRY-}medicalshopapi
+  medcalshop.api:
+     environment:
+        - ASPNETCORE_ENVIROMENT=Development
+        - ASPNETCORE_HTTP_PORTS=3000
+        - ASPNETCORE_HTTPS_PORT=3001
+        - ASPNETCORE_Kestewl__Default__Password=123
+        - ASPNETCORE_Kestewl__Default__Path=/https/medocal.pfx
+     container_name: medicalshop.api
+     image:  medicalshop.api
+     build:
+       context: .
+       dockerfile: MedicalShop.API/Dockerfile
+     ports:
+        - "3000:3000" 
+        - "3001:3001"
+     volumes:
+        - ~/.aspnet/https:/https:ro
+     depends_on:
+        database.server:
+            condition: service_healthy
+  database.server:
+      image: "mcr.microsoft.com/mssql/server"
+      container_name: database.server
+      ports:
+         - "1433:1433" 
+      environment:
+         - ACCEPT_EULA=y
+         - SA_PASSWORD=SuperPASSWORD123
+      volumes:
+         - ./sqlserver/data:/var/opt/mssql/data
+         - ./sqlserver/log:/var/opt/mssql/log
+      healthcheck:
+        test: /opt/mssql-tools/bin/sqlsmd -S localhost -U SA -P "SuperPASSWORD123" -Q "SELECT 1" -b -o  /dev/null
+        interval: 10s
+        timeout: 3s
+        retries: 10
+        start_period: 10s 
+  medicalshop.client:
     build:
-      context: .
-      dockerfile: src/Services/shop/MedicalShop.Api/Dockerfile
-volumes:
-    postgres_data:
-    pgadmin_data:
+       context: MedicalShop.Api/Client/medical
+       dockerfile: Dockerfile
+    image: medical.client
+    container_name: medical.client
+    ports:
+       - "5000:5000"
+    depends_on:
+       - medical.api
