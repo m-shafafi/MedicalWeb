@@ -10,40 +10,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalShop.Infrastructure
+namespace MedicalShop.Infrastructure;
+
+public class WriteUnitOfWork : IWriteUnitOfWork
 {
-    public class WriteUnitOfWork : IWriteUnitOfWork
+    private IProductWriteRepository _ProductWriteRepository;
+    private IMenuWriteRepository _MenuWriteRepository;
+    private INewsWriteRepository _NewsWriteRepository;
+    private readonly ApplicationDbContext _context;
+    public WriteUnitOfWork(ApplicationDbContext context)
     {
-        private IProductWriteRepository _ProductWriteRepository;
-        private IMenuWriteRepository _MenuWriteRepository;
-        private INewsWriteRepository _NewsWriteRepository;
-        private readonly ApplicationDbContext _context;
-        public WriteUnitOfWork(ApplicationDbContext context)
+        _context = context;
+    }
+    public IProductWriteRepository ProductWriteRepository{
+        get
         {
-            _context = context;
+            return _ProductWriteRepository ??=new ProductWriteRepository(_context);
         }
-        public IProductWriteRepository ProductWriteRepository{
-            get
-            {
-                return _ProductWriteRepository ??=new ProductWriteRepository(_context);
-            }
-        }
+    }
 
-        public INewsWriteRepository NewsWriteRepository
+    public INewsWriteRepository NewsWriteRepository
+    {
+        get
         {
-            get
-            {
-                return _NewsWriteRepository ??= new NewsWriteRepository(_context);
-            }
+            return _NewsWriteRepository ??= new NewsWriteRepository(_context);
         }
+    }
 
-        public IMenuWriteRepository MenuWriteRepository
+    public IMenuWriteRepository MenuWriteRepository
+    {
+        get
         {
-            get
-            {
 
-                return _MenuWriteRepository ??= new MenuWriteRepository(_context);
-            }
+            return _MenuWriteRepository ??= new MenuWriteRepository(_context);
         }
     }
 }

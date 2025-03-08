@@ -36,7 +36,7 @@ services:
         timeout: 3s
         retries: 10
         start_period: 10s 
-  medicalshop.client:
+  medical.client:
     build:
        context: MedicalShop.Api/Client/medical
        dockerfile: Dockerfile

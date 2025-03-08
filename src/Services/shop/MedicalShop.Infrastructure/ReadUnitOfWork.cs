@@ -11,37 +11,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalShop.Infrastructure
-{
-    public class ReadUnitOfWork : IReadUnitOfWork
-    {
+namespace MedicalShop.Infrastructure;
 
-        private readonly ApplicationDbContext _context;
-        public ReadUnitOfWork(ApplicationDbContext context)
+public class ReadUnitOfWork : IReadUnitOfWork
+{
+
+    private readonly ApplicationDbContext _context;
+    public ReadUnitOfWork(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+    private ProductReadRepository _productReadRepository;
+    private MenuReadRepository _menuReadRepository;
+    private NewsReadRepository _newsReadRepository;
+    public IProductReadRepository ProductReadRepository
+    {
+        get
         {
-            _context = context;
+            return _productReadRepository ??= new ProductReadRepository(_context);
         }
-        private ProductReadRepository _productReadRepository;
-        private MenuReadRepository _menuReadRepository;
-        private NewsReadRepository _newsReadRepository;
-        public IProductReadRepository ProductReadRepository
+    }
+    public INewsReadRepository NewsReadRepository
+    {
+        get
         {
-            get
-            {
-                return _productReadRepository ??= new ProductReadRepository(_context);
-            }
+            return _newsReadRepository ??= new NewsReadRepository(_context);
         }
-        public INewsReadRepository NewsReadRepository
-        {
-            get
-            {
-                return _newsReadRepository ??= new NewsReadRepository(_context);
-            }
-        }
-       public IMenuReadRepository MenuReadRepository {
-            get {
-                return _menuReadRepository ??= new MenuReadRepository(_context);
-                    }
-        }
+    }
+   public IMenuReadRepository MenuReadRepository {
+        get {
+            return _menuReadRepository ??= new MenuReadRepository(_context);
+                }
     }
 }

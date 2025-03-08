@@ -1,0 +1,6 @@
+@MedicalShop.Presentation_HostAddress = http://localhost:5137
+
+GET {{MedicalShop.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

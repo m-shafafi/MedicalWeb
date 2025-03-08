@@ -1,7 +1,6 @@
-﻿
-
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using MedicalShop.Contracts.Exceptions;
 
 namespace MedicalShop.Presentation.Handlers;
 
