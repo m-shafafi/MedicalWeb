@@ -20,11 +20,11 @@ public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, G
     public async Task<GetProductByIdResponse> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
     {
         var Medical = await _ApplicationDbContext.products
-            .FirstOrDefaultAsync(x => x.ID == request.Id, cancellationToken);
+            .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
         if (Medical is null)
         {
-            throw new NotFoundException($"{nameof(Medical)} with {nameof(Medical.ID)}: {request.Id}" +
+            throw new NotFoundException($"{nameof(Medical)} with {nameof(Medical.Id)}: {request.Id}" +
                                         $"was not found in database");
         }
 

@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Medicals.Contracts.Responses;
+﻿using MedicalShop.Contracts.Responses;
+using Microsoft.EntityFrameworkCore;
 
 namespace Medicals.Application.Helpers;
 

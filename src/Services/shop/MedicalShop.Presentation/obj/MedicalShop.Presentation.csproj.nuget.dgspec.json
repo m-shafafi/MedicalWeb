@@ -1,10 +1,9 @@
 {
   "format": 1,
   "restore": {
-    "I:\\GIT\\Shop\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj": {}
+    "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj": {}
   },
   "projects": {
-<<<<<<< HEAD
     "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Application\\MedicalShop.Application.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -331,22 +330,19 @@
       }
     },
     "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj": {
-=======
-    "I:\\GIT\\Shop\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj": {
->>>>>>> 731ce46d9d83095d4f11f6091dc6f2d29317bbe7
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "I:\\GIT\\Shop\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
+        "projectUniqueName": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
         "projectName": "MedicalShop.Presentation",
-        "projectPath": "I:\\GIT\\Shop\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
-        "packagesPath": "C:\\Users\\Mehri\\.nuget\\packages\\",
-        "outputPath": "I:\\GIT\\Shop\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\obj\\",
+        "projectPath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
+        "packagesPath": "C:\\Users\\m-shafafi\\.nuget\\packages\\",
+        "outputPath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mehri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\m-shafafi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -354,7 +350,6 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -380,8 +375,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -411,11 +405,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.309/PortableRuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
->>>>>>> 731ce46d9d83095d4f11f6091dc6f2d29317bbe7
         }
       }
     }

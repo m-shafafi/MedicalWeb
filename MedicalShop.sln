@@ -13,13 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Domain", "src\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Infrastructure", "src\Services\shop\MedicalShop.Infrastructure\MedicalShop.Infrastructure.csproj", "{C7A4A95A-E48E-4437-99DF-415D262611FA}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9B478CD3-2939-455F-89A6-8CA1E0976778}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Contracts", "src\Services\shop\MedicalShop.Contracts\MedicalShop.Contracts\MedicalShop.Contracts.csproj", "{B9416D87-CF3E-4B72-A54E-B60206AF3BA3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Application", "src\Services\shop\MedicalShop.Application\MedicalShop.Application.csproj", "{26B612A4-C9F2-4CE9-AA3B-9455811D3AF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalShop.Presentation", "src\Services\shop\MedicalShop.Presentation\MedicalShop.Presentation.csproj", "{AA63E35A-D77C-4F25-AC5A-1C5EE57B5855}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3EC9DA9F-7DB6-451F-AB01-27653BD2E214}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{C7A4A95A-E48E-4437-99DF-415D262611FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7A4A95A-E48E-4437-99DF-415D262611FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7A4A95A-E48E-4437-99DF-415D262611FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B478CD3-2939-455F-89A6-8CA1E0976778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B478CD3-2939-455F-89A6-8CA1E0976778}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B478CD3-2939-455F-89A6-8CA1E0976778}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B478CD3-2939-455F-89A6-8CA1E0976778}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9416D87-CF3E-4B72-A54E-B60206AF3BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9416D87-CF3E-4B72-A54E-B60206AF3BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9416D87-CF3E-4B72-A54E-B60206AF3BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU

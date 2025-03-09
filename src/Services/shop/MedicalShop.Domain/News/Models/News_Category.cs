@@ -24,7 +24,7 @@ namespace MedicalShop.Domain.News.Models
         {
             public void Configure(EntityTypeBuilder<News_Category> builder)
             {
-                builder.HasKey(x => x.ID);
+                builder.HasKey(x => x.Id);
                 builder.Property(p => p.Name).IsRequired().HasMaxLength(200);
                 builder.Property(p => p.Description).HasMaxLength(500);
                 builder.Property(p => p.Slug).IsRequired().HasMaxLength(200);

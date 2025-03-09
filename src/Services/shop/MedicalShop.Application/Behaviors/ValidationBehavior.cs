@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using FluentValidation.Validators;
 using MediatR;
-using Medicals.Contracts.Errors;
-using Medicals.Contracts.Exceptions;
+using MedicalShop.Contracts.Errors;
+using MedicalShop.Contracts.Exceptions;
 
 namespace Medicals.Application.Behaviors;
 
@@ -14,7 +13,7 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
     {
         _validators = validators;
     }
-    
+
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next,
         CancellationToken cancellationToken)
     {

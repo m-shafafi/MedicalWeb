@@ -7,6 +7,6 @@ public class GetProductByIdQueryValidator : AbstractValidator<GetProductByIdQuer
     public GetProductByIdQueryValidator()
     {
         RuleFor(x => x.Id).NotEmpty()
-            .WithMessage($"{nameof(ProductEntity.ID)} cannot be empty");
+            .WithMessage($"{nameof(ProductEntity.Id)} cannot be empty");
     }
 }

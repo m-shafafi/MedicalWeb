@@ -26,7 +26,7 @@ namespace MedicalShop.Domain.Menu
         }
         public async Task<ProductCategory> FetchProductCategoryAsync(int id)
         {
-            return await _dbContext.category.FirstOrDefaultAsync(p => p.ID == id);
+            return await _dbContext.category.FirstOrDefaultAsync(p => p.Id == id);
         }
         public async Task<List<ProductBrand>> FetchAllProductBrandAsync()
         {
@@ -34,7 +34,7 @@ namespace MedicalShop.Domain.Menu
         }
         public async Task<ProductBrand> FetchProductBrandAsync(int id)
         {
-            return await _dbContext.brands.FirstOrDefaultAsync(p => p.ID == id);
+            return await _dbContext.brands.FirstOrDefaultAsync(p => p.Id == id);
 
         }
         public async Task<List<ProductEntity>> FetchAllProductEntityAsync()
@@ -43,7 +43,7 @@ namespace MedicalShop.Domain.Menu
         }
         public async Task<ProductEntity> FetchProductEntityAsync(int id)
         {
-            return await _dbContext.products.FirstOrDefaultAsync(p => p.ID == id);
+            return await _dbContext.products.FirstOrDefaultAsync(p => p.Id == id);
         }
        
 

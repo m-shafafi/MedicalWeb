@@ -24,7 +24,7 @@ public class ProductEntity : BaseEntity
     {
         public void Configure(EntityTypeBuilder<ProductEntity> builder)
         {
-            builder.HasKey(x => x.ID);
+            builder.HasKey(x => x.Id);
             builder.Property(p => p.Name).IsRequired().HasMaxLength(200);
             builder.Property(p => p.Description).IsRequired().HasMaxLength(500);
             builder.Property(p => p.Price).IsRequired().HasColumnType("decimal(18,2)");

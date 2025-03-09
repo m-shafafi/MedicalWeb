@@ -19,7 +19,7 @@ namespace MedicalShop.Domain.Menu.Models
         {
             public void Configure(EntityTypeBuilder<Menu_MainMenu> builder)
             {
-                builder.HasKey(x => x.ID);
+                builder.HasKey(x => x.Id);
                 builder.Property(p => p.Name).IsRequired();
                 builder.Property(p => p.CreatedDate).IsRequired();
                 builder.Property(p => p.UpdatedDate).IsRequired();

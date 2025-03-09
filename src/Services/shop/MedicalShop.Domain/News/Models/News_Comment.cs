@@ -22,7 +22,7 @@ namespace MedicalShop.Domain.News.Models
         {
             public void Configure(EntityTypeBuilder<News_Comment> builder)
             {
-                builder.HasKey(x => x.ID);
+                builder.HasKey(x => x.Id);
                 builder.Property(p => p.NewsArticleID).IsRequired();
                // builder.Property(p => p.UserID).IsRequired();
                 builder.Property(p => p.Content).IsRequired().HasMaxLength(1000);
