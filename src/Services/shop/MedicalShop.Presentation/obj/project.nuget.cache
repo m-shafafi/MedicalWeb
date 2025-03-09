@@ -1,9 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "z6CPGCwD988=",
+=======
+  "dgSpecHash": "KNAPU4pvnrw=",
+>>>>>>> 731ce46d9d83095d4f11f6091dc6f2d29317bbe7
   "success": true,
-  "projectFilePath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
+  "projectFilePath": "I:\\GIT\\Shop\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
   "expectedPackageFiles": [
+<<<<<<< HEAD
     "C:\\Users\\m-shafafi\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
@@ -33,6 +38,14 @@
     "C:\\Users\\m-shafafi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0\\system.diagnostics.diagnosticsource.9.0.0.nupkg.sha512"
+=======
+    "C:\\Users\\Mehri\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Mehri\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Mehri\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Mehri\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Mehri\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Mehri\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+>>>>>>> 731ce46d9d83095d4f11f6091dc6f2d29317bbe7
   ],
   "logs": []
 }
