@@ -1,13 +1,13 @@
 services:
-  movies.api:
+  medicalshop.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=3000
       - ASPNETCORE_HTTPS_PORTS=3001
       - ASPNETCORE_Kestrel__Certificates__Default__Password=123
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/movies.pfx
-    container_name: movies.api
-    image: medicalShop.api
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/medicalshop.pfx
+    container_name: medicalshop.api
+    image: medicalshop.api
     build:
       context: .
       dockerfile: MedicalShop.Presentation/Dockerfile
@@ -39,13 +39,13 @@ services:
       retries: 10
       start_period: 10s
       
-  movies.client:
+  medicalshop.client:
     build:
-      context: MedicalShop.Presentation/Client/movies
+      context: MedicalShop.Presentation/Client/medical
       dockerfile: Dockerfile
-    image: movies.client
-    container_name: movies.client
+    image: medicalshop.client
+    container_name: medicalshop.client
     ports:
       - "5000:5000"
     depends_on: 
-      - medicalShop.api
+      - medicalshop.api
