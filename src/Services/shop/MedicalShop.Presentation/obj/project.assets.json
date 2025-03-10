@@ -1444,8 +1444,8 @@
     },
     "MedicalShop.Contracts/1.0.0": {
       "type": "project",
-      "path": "../MedicalShop.Contracts/MedicalShop.Contracts/MedicalShop.Contracts.csproj",
-      "msbuildProject": "../MedicalShop.Contracts/MedicalShop.Contracts/MedicalShop.Contracts.csproj"
+      "path": "../MedicalShop.Contracts/MedicalShop.Contracts.csproj",
+      "msbuildProject": "../MedicalShop.Contracts/MedicalShop.Contracts.csproj"
     },
     "MedicalShop.Domain/1.0.0": {
       "type": "project",

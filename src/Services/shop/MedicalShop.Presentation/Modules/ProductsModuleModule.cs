@@ -8,7 +8,6 @@ using MedicalShop.Application.Queries.Product.GetProduct;
 using MedicalShop.Contracts.Requests.Common;
 using MedicalShop.Contracts.Requests.Medicals;
 using Microsoft.AspNetCore.Mvc;
-
 namespace Medicals.Presentation.Modules;
 
 public static class ProductsModuleModule
