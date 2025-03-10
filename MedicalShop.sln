@@ -17,12 +17,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Contracts", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Application", "src\Services\shop\MedicalShop.Application\MedicalShop.Application.csproj", "{26B612A4-C9F2-4CE9-AA3B-9455811D3AF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalShop.Presentation", "src\Services\shop\MedicalShop.Presentation\MedicalShop.Presentation.csproj", "{AA63E35A-D77C-4F25-AC5A-1C5EE57B5855}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalShop.Presentation", "src\Services\shop\MedicalShop.Presentation\MedicalShop.Presentation.csproj", "{AA63E35A-D77C-4F25-AC5A-1C5EE57B5855}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3EC9DA9F-7DB6-451F-AB01-27653BD2E214}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalShop.Contracts", "src\Services\shop\MedicalShop.Contracts\MedicalShop.Contracts.csproj", "{84FA86E3-3599-4510-B45B-85A03FABEBFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{AA63E35A-D77C-4F25-AC5A-1C5EE57B5855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA63E35A-D77C-4F25-AC5A-1C5EE57B5855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA63E35A-D77C-4F25-AC5A-1C5EE57B5855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84FA86E3-3599-4510-B45B-85A03FABEBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84FA86E3-3599-4510-B45B-85A03FABEBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84FA86E3-3599-4510-B45B-85A03FABEBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84FA86E3-3599-4510-B45B-85A03FABEBFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{B9416D87-CF3E-4B72-A54E-B60206AF3BA3} = {26A93D0E-C12E-462A-A721-39965001D501}
 		{26B612A4-C9F2-4CE9-AA3B-9455811D3AF7} = {26A93D0E-C12E-462A-A721-39965001D501}
 		{AA63E35A-D77C-4F25-AC5A-1C5EE57B5855} = {26A93D0E-C12E-462A-A721-39965001D501}
+		{84FA86E3-3599-4510-B45B-85A03FABEBFF} = {26A93D0E-C12E-462A-A721-39965001D501}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {147F30A1-569E-453B-92D1-B023ED71B1AC}
