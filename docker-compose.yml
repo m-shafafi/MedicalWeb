@@ -6,11 +6,13 @@ services:
       - ASPNETCORE_HTTPS_PORTS=3001
       - ASPNETCORE_Kestrel__Certificates__Default__Password=123
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/medicalshop.pfx
+      - DOCKER_USERNAME=m-shafafi@outlook.com
+      - DOCKER_PASSWORD=M1718993100s!
     container_name: medicalshop.api
     image: medicalshop.api
     build:
       context: .
-      dockerfile: MedicalShop.Presentation/Dockerfile
+      dockerfile: src/services/Shop/MedicalShop.Presentation/Dockerfile
     ports:
       - "3000:3000"
       - "3001:3001"
@@ -19,7 +21,6 @@ services:
     depends_on:
       database.server:
         condition: service_healthy
-  
   database.server:
     image: "mcr.microsoft.com/mssql/server"
     container_name: database.server

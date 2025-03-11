@@ -1,33 +1,37 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-
+# Use the base image with ASP.NET
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
+EXPOSE 80
 
-EXPOSE 3000
-EXPOSE 3001
-
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Development
+# Use SDK image for building the application
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-COPY ["MedicalShop.Presentation/MedicalShop.Presentation.csproj", "MedicalShop.Presentation/"]
-COPY ["MedicalShop.Infrastructure/MedicalShop.Infrastructure.csproj", "MedicalShop.Infrastructure/"]
-COPY ["MedicalShop.Domain/MedicalShop.Domain.csproj", "MedicalShop.Domain/"]
-COPY ["MedicalShop.Application/MedicalShop.Application.csproj", "MedicalShop.Application/"]
-COPY ["MedicalShop.Contracts/MedicalShop.Contracts.csproj", "MedicalShop.Contracts/"]
+# Copy only the .csproj files first to optimize caching
+COPY ["src/Services/Shop/MedicalShop.Presentation/MedicalShop.Presentation.csproj", "src/Services/Shop/MedicalShop.Presentation/"]
 
-RUN dotnet restore "MedicalShop.Presentation/MedicalShop.Presentation.csproj"
+# Restore the dependencies for the project
+RUN dotnet restore "src/Services/Shop/MedicalShop.Presentation/MedicalShop.Presentation.csproj"
 
+# Copy the rest of the project files
 COPY . .
 
-WORKDIR "/src/MedicalShop.Presentation"
-RUN dotnet build "MedicalShop.Presentation.csproj" -c $BUILD_CONFIGURATION -o /app/build
+# Set the working directory to the project folder
+WORKDIR "/src/Services/Shop/MedicalShop.Presentation"
 
+# Build the application in Release configuration
+RUN dotnet build "MedicalShop.Presentation.csproj" -c Release -o /app/build
+
+# Publish the application to the /app/publish folder
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Development
-RUN dotnet publish "MedicalShop.Presentation.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "MedicalShop.Presentation.csproj" -c Release -o /app/publish
 
+# Final image based on the base ASP.NET image
 FROM base AS final
 WORKDIR /app
+
+# Copy the published application to the final image
 COPY --from=publish /app/publish .
 
+# Set the entry point to run the application
 ENTRYPOINT ["dotnet", "MedicalShop.Presentation.dll"]
