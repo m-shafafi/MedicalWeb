@@ -20,7 +20,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3EC9DA9F-7DB6-451F-AB01-27653BD2E214}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
-		docker.env = docker.env
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalShop.Contracts", "src\Services\shop\MedicalShop.Contracts\MedicalShop.Contracts.csproj", "{84FA86E3-3599-4510-B45B-85A03FABEBFF}"
