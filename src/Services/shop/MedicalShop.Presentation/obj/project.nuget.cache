@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C8TPjKjHleU=",
+  "dgSpecHash": "F+W12YrlYCs=",
   "success": true,
   "projectFilePath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,8 @@
     "C:\\Users\\m-shafafi\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\mapster.dependencyinjection\\1.0.1\\mapster.dependencyinjection.1.0.1.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\masstransit\\8.3.7\\masstransit.8.3.7.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\masstransit.abstractions\\8.3.7\\masstransit.abstractions.8.3.7.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.1\\microsoft.aspnetcore.openapi.8.0.1.nupkg.sha512",
@@ -40,6 +42,11 @@
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.dependencymodel\\8.0.0\\microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\8.0.0\\microsoft.extensions.diagnostics.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks\\8.0.0\\microsoft.extensions.diagnostics.healthchecks.8.0.0.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks.abstractions\\8.0.0\\microsoft.extensions.diagnostics.healthchecks.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\8.0.0\\microsoft.extensions.hosting.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.logging\\9.0.0\\microsoft.extensions.logging.9.0.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.extensions.options\\9.0.0\\microsoft.extensions.options.9.0.0.nupkg.sha512",

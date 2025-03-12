@@ -1,20 +1,18 @@
-﻿using MapsterMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
-using MedicalShop.Application.Queries.Medicals.GetMedicalById;
-using MedicalShop.Contracts.Dtos.Products;
-using MedicalShop.Contracts.Exceptions;
-using MedicalShop.Contracts.Responses;
-using MedicalShop.Domain.Base;
-using MedicalShop.Domain.UnitOfWork.Product;
-using MedicalShop.Infrastructure;
-using Microsoft.EntityFrameworkCore;
-using Products.Application.Products.Queries.GetProductsList;
+using Products.Domain;
+using Products.Domain.Base;
+using Products.Domain.Products;
 
-namespace Medicals.Application.Queries.Medicals.GetMedicalById;
-
-internal class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, GetProductByIdResponse>
+namespace Products.Application.Products.Queries.GetProductsList
 {
-    internal class GetProductsListQueryHandler : IRequestHandler<GetProductsListQuery, PaginitionResDto<List<ProductResDto>>>
+    internal class GetProductsListQueryHandler:IRequestHandler<GetProductsListQuery, PaginitionResDto<List<ProductResDto>>>
     {
 
         private readonly IReadUnitOfWork _readUnitOfWork;

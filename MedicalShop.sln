@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalShop.Contracts", "src\Services\shop\MedicalShop.Contracts\MedicalShop.Contracts.csproj", "{84FA86E3-3599-4510-B45B-85A03FABEBFF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{64A53ADD-71B4-41DA-8A55-633D7FF49554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{168CB28D-8160-4269-BD98-2650A07E3B9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,10 @@ Global
 		{84FA86E3-3599-4510-B45B-85A03FABEBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84FA86E3-3599-4510-B45B-85A03FABEBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84FA86E3-3599-4510-B45B-85A03FABEBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168CB28D-8160-4269-BD98-2650A07E3B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168CB28D-8160-4269-BD98-2650A07E3B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168CB28D-8160-4269-BD98-2650A07E3B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168CB28D-8160-4269-BD98-2650A07E3B9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{26B612A4-C9F2-4CE9-AA3B-9455811D3AF7} = {26A93D0E-C12E-462A-A721-39965001D501}
 		{AA63E35A-D77C-4F25-AC5A-1C5EE57B5855} = {26A93D0E-C12E-462A-A721-39965001D501}
 		{84FA86E3-3599-4510-B45B-85A03FABEBFF} = {26A93D0E-C12E-462A-A721-39965001D501}
+		{168CB28D-8160-4269-BD98-2650A07E3B9B} = {64A53ADD-71B4-41DA-8A55-633D7FF49554}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {147F30A1-569E-453B-92D1-B023ED71B1AC}

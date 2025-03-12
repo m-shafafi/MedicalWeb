@@ -22,6 +22,9 @@ namespace MedicalShop.Domain.Menu
         #region
         Task<List<ProductEntity>> FetchAllProductEntityAsync();
         Task<ProductEntity> FetchProductEntityAsync(int id);
+        Task<ProductEntity> FetchProductAsync(int id);
+        Task<ProductEntity> FetchProductAsyncNoTracking(int id);
+        Task<Tuple<List<ProductEntity>, int>> GetByFilterPagedAsync(ProductFilterPageReqDto request);
         #endregion
     }
 }

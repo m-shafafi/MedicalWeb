@@ -1,45 +1,35 @@
-﻿using MediatR;
+﻿using MapsterMapper;
+using MediatR;
 using MedicalShop.Contracts.Exceptions;
-using MedicalShop.Infrastructure;
-using Microsoft.EntityFrameworkCore;
+using MedicalShop.Domain.UnitOfWork.Product;
+using Microsoft.Extensions.Logging;
 
 namespace MedicalShop.Application.Commands.Medicals.UpdateProduct;
 
-public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, Unit>
+public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, bool>
 {
-    private readonly ApplicationDbContext _ApplicationDbContext;
+    private readonly IWriteUnitOfWork _writeUnitOfWork;
+    private readonly IReadUnitOfWork _readUnitOfWork;
+    private readonly IMapper _mapper;
+    private readonly ILogger<UpdateProductCommandHandler> _logger;
 
-    public UpdateProductCommandHandler(ApplicationDbContext applicationDbContext)
+    public UpdateProductCommandHandler(IWriteUnitOfWork writeUnitOfWork, IReadUnitOfWork readUnitOfWork, IMapper mapper, ILogger<UpdateProductCommandHandler> logger)
     {
-        _ApplicationDbContext = applicationDbContext;
+        _writeUnitOfWork = writeUnitOfWork;
+        _readUnitOfWork = readUnitOfWork;
+        _mapper = mapper;
+        _logger = logger;
     }
-
-    public async Task<Unit> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
-        var MedicalToUpdate =
-            await _ApplicationDbContext.products
-                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
-
-        if (MedicalToUpdate is null)
+        var product = await _readUnitOfWork.ProductReadRepository.FetchProductEntityAsync(request.Id);
+        if (product == null)
         {
-            throw new NotFoundException($"{nameof(ProductEntity)} with {nameof(ProductEntity.Id)}: {request.Id}" +
-                                        $"was not found in database");
+            throw new NotFoundException(nameof(ProductEntity), request.Id);
         }
-
-        MedicalToUpdate.Name = request.Name;
-        MedicalToUpdate.Description = request.Description;
-        MedicalToUpdate.Price = request.Price;
-        MedicalToUpdate.BrandID = request.BrandID;
-        MedicalToUpdate.CategoryID = request.CategoryID;
-        MedicalToUpdate.StockQuantity = request.StockQuantity;
-        MedicalToUpdate.SKU = request.SKU;
-        MedicalToUpdate.ImageURL = request.ImageURL;
-        MedicalToUpdate.Warranty = request.Warranty;
-        MedicalToUpdate.Rating = request.Rating;
-
-        _ApplicationDbContext.products.Update(MedicalToUpdate);
-        await _ApplicationDbContext.SaveChangesAsync(cancellationToken);
-
-        return Unit.Value;
+        var updatedProduct = _mapper.Map<ProductEntity>(request);
+        await _writeUnitOfWork.ProductWriteRepository.UpdateProductAsync(updatedProduct);
+        _logger.LogInformation($"Product {product.Id} is successfully updated.");
+        return true;
     }
 }

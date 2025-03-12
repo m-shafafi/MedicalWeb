@@ -1,4 +1,6 @@
-﻿using MapsterMapper;
+﻿using EventBus.Messages.Events;
+using MapsterMapper;
+using MassTransit;
 using MediatR;
 using MedicalShop.Contracts.Dtos.Products;
 using MedicalShop.Domain.UnitOfWork.Product;
@@ -32,10 +34,17 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
 
         var addProductEvent = new AddProductEvent
         {
-            ProductId = addedProduct.Id,
-            ProductTitle = addedProduct.Title
+            Description = addedProduct.Description,
+            Price = addedProduct.Price,
+            BrandID = addedProduct.BrandID,
+            CategoryID = addedProduct.CategoryID,
+            StockQuantity = addedProduct.StockQuantity,
+            SKU = addedProduct.SKU,
+            ImageURL = addedProduct.ImageURL,
+            Warranty = addedProduct.Warranty,
+            Rating = addedProduct.Rating,
         };
         await _publishEndPoint.Publish(addProductEvent);
-        return _mapper.Map<ProductResDto>(addedProduct);
+        return _mapper.Map<ProductsDto>(addedProduct);
     }
 }

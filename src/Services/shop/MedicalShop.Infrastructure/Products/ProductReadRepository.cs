@@ -45,7 +45,48 @@ namespace MedicalShop.Domain.Menu
         {
             return await _dbContext.products.FirstOrDefaultAsync(p => p.Id == id);
         }
-       
+        public async Task<Tuple<List<ProductEntity>, int>> GetByFilterPagedAsync(ProductFilterPageReqDto request)
+        {
+            var filteredProducts = _dbContext.products.AsQueryable();
+            if (request.Id != 0)
+            {
+                filteredProducts = filteredProducts.Where(p => p.Id == request.Id);
+            }
+
+            if (!string.IsNullOrWhiteSpace(request.SearchTerm))
+            {
+                request.SearchTerm = request.SearchTerm.Trim().ToLower();
+                filteredProducts = filteredProducts.Where(p => p.Name.ToLower().Contains(request.SearchTerm)
+                                                               || p.Description.ToLower().Contains(request.SearchTerm));
+
+            }
+
+            if (request.MinPrice != null)
+            {
+                filteredProducts = filteredProducts.Where(p => p.Price >= request.MinPrice);
+            }
+
+            if (request.MaxPrice != null)
+            {
+                filteredProducts = filteredProducts.Where(p => p.Price <= request.MaxPrice);
+            }
+
+
+            if (request.CategoryId != 0)
+            {
+                filteredProducts = filteredProducts.Where(p => p.CategoryID == request.CategoryId);
+            }
+
+            int countOfFilteredProducts = filteredProducts.Count();
+            filteredProducts = filteredProducts.Skip(request.PageIndex * request.PageSize).Take(request.PageSize);
+
+            return
+                Tuple.Create(await filteredProducts.ToListAsync(), countOfFilteredProducts);
+
+
+
+        }
+
 
     }
 }

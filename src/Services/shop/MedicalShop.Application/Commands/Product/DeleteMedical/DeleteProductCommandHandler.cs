@@ -1,34 +1,38 @@
 ﻿using MediatR;
 using MedicalShop.Contracts.Exceptions;
+using MedicalShop.Domain.UnitOfWork.Product;
 using MedicalShop.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Medicals.Application.Commands.Medicals.DeleteMedical;
 
 public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand, bool>
 {
-    private readonly ApplicationDbContext _ApplicationDbContext;
+    private readonly IWriteUnitOfWork _writeUnitOfWork;
+    private readonly IReadUnitOfWork _readUnitOfWork;
 
-    public DeleteProductCommandHandler(ApplicationDbContext applicationDbContext)
+    private readonly ILogger<DeleteProductCommandHandler> _logger;
+
+    public DeleteProductCommandHandler(IWriteUnitOfWork writeUnitOfWork, IReadUnitOfWork readUnitOfWork, ILogger<DeleteProductCommandHandler> logger)
     {
-        _ApplicationDbContext = applicationDbContext;
+        _writeUnitOfWork = writeUnitOfWork;
+        _readUnitOfWork = readUnitOfWork;
+        _logger = logger;
     }
-
-    public async Task<Unit> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
-        var MedicalToDelete =
-            await _ApplicationDbContext.products
-                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
-
-        if (MedicalToDelete is null)
+        var product = await _readUnitOfWork.ProductReadRepository.FetchProductEntityAsync(request.Id);
+        if (product == null)
         {
-            throw new NotFoundException($"{nameof(ProductEntity)} with {nameof(ProductEntity.Id)}: {request.Id}" +
-                                        $"was not found in database");
+            throw new NotFoundException("Product", request.Id);
         }
 
-        _ApplicationDbContext.products.Remove(MedicalToDelete);
-        await _ApplicationDbContext.SaveChangesAsync(cancellationToken);
+        await _writeUnitOfWork.ProductWriteRepository.DeleteProductAsync(product);
 
-        return Unit.Value;
+        return true;
+
+
     }
+
 }
