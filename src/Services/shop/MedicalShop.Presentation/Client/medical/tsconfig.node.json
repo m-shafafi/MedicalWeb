@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "lib": [ "ES2023", "DOM" ], // ✅ Add "DOM" here
     "module": "ESNext",
+    "moduleDetection": "force",
     "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
+    "noEmit": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "target": "ES2022"
   },
-  "include": ["vite.config.ts"]
+  "include": [ "vite.config.ts" ]
 }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Medicals.Application.Commands.Medicals.DeleteMedical;
 
-public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand, Unit>
+public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand, bool>
 {
     private readonly ApplicationDbContext _ApplicationDbContext;
 

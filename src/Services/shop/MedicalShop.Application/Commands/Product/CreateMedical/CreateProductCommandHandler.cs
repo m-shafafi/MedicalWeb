@@ -1,36 +1,41 @@
-﻿using MediatR;
+﻿using MapsterMapper;
+using MediatR;
+using MedicalShop.Contracts.Dtos.Products;
+using MedicalShop.Domain.UnitOfWork.Product;
 using MedicalShop.Infrastructure;
+using Microsoft.Extensions.Logging;
 
 namespace Medicals.Application.Commands.Medicals.CreateMedical;
 
-public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
+public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ProductsDto>
 {
-    private readonly ApplicationDbContext _ApplicationDbContext;
+    private readonly IWriteUnitOfWork _writeUnitOfWork;
+    private readonly IMapper _mapper;
+    private readonly ILogger<CreateProductCommandHandler> _logger;
+    private readonly IPublishEndpoint _publishEndPoint;
 
-    public CreateProductCommandHandler(ApplicationDbContext applicationDbContext)
+
+    public CreateProductCommandHandler(IWriteUnitOfWork writeUnitOfWork, IMapper mapper, IPublishEndpoint publishEndpoint, ILogger<CreateProductCommandHandler> logger)
     {
-        _ApplicationDbContext = applicationDbContext;
+        _writeUnitOfWork = writeUnitOfWork;
+        _mapper = mapper;
+        _logger = logger;
+        _publishEndPoint = publishEndpoint;
     }
 
-    public async Task<int> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public async Task<ProductsDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-        var product = new ProductEntity
+        var newProduct = _mapper.Map<ProductEntity>(request);
+        var addedProduct = await _writeUnitOfWork.ProductWriteRepository.AddProductAsync(newProduct);
+        _logger.LogInformation($"Product {addedProduct.Id} is successfully created.");
+
+
+        var addProductEvent = new AddProductEvent
         {
-            Name = request.Name,
-            Description = request.Description,
-            Price = request.Price,
-            BrandID = request.BrandID,
-            CategoryID = request.CategoryID,
-            StockQuantity = request.StockQuantity,
-            SKU = request.SKU,
-            ImageURL = request.ImageURL,
-            Warranty = request.Warranty,
-            Rating = request.Rating
+            ProductId = addedProduct.Id,
+            ProductTitle = addedProduct.Title
         };
-
-        await _ApplicationDbContext.products.AddAsync(product, cancellationToken);
-        await _ApplicationDbContext.SaveChangesAsync(cancellationToken);
-
-        return product.Id;
+        await _publishEndPoint.Publish(addProductEvent);
+        return _mapper.Map<ProductResDto>(addedProduct);
     }
 }
