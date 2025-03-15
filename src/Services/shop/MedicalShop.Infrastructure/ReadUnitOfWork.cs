@@ -1,15 +1,9 @@
-﻿using MedicalShop.Domain.Menu;
+﻿using MedicalShop.Contracts.Repositories;
+using MedicalShop.Domain.Menu;
 using MedicalShop.Domain.News.Article;
-using MedicalShop.Domain.Products;
 using MedicalShop.Domain.UnitOfWork.Product;
 using MedicalShop.Infrastructure.Menu;
 using MedicalShop.Infrastructure.News;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MedicalShop.Infrastructure;
 
@@ -38,9 +32,11 @@ public class ReadUnitOfWork : IReadUnitOfWork
             return _newsReadRepository ??= new NewsReadRepository(_context);
         }
     }
-   public IMenuReadRepository MenuReadRepository {
-        get {
+    public IMenuReadRepository MenuReadRepository
+    {
+        get
+        {
             return _menuReadRepository ??= new MenuReadRepository(_context);
-                }
+        }
     }
 }

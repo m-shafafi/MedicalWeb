@@ -1,6 +1,21 @@
 ﻿namespace MedicalShop.Contracts.Dtos.Products;
 
-public record ProductDto(int Id, string Name, string Description, decimal Price, int? BrandID, int? CategoryID, string StockQuantity, string SKU, string ImageURL, string Warranty, int Rating);
+public class ProductDto :ProductDto
+{
+
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public decimal Price { get; set; }
+    public int? BrandID { get; set; }
+    public int? CategoryID { get; set; }
+    public string StockQuantity { get; set; }
+    public string SKU { get; set; }
+    public string ImageURL { get; set; }
+    public string Warranty { get; set; }
+    public int Rating { get; set; }
+
+
+}
 public class ProductFilterPageReqDto
 {
     public int Id { get; set; }

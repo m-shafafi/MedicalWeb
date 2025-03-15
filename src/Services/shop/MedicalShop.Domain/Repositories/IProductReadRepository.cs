@@ -1,13 +1,8 @@
-﻿using MedicalShop.Domain.Menu;
-using MedicalShop.Domain.Menu.Models;
-using MedicalShop.Domain.Products.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace MedicalShop.Domain.Menu
+using MedicalShop.Domain.Products.Models;
+
+namespace MedicalShop.Contracts.Repositories
 {
     public interface IProductReadRepository
     {
@@ -22,9 +17,9 @@ namespace MedicalShop.Domain.Menu
         #region
         Task<List<ProductEntity>> FetchAllProductEntityAsync();
         Task<ProductEntity> FetchProductEntityAsync(int id);
-        Task<ProductEntity> FetchProductAsync(int id);
-        Task<ProductEntity> FetchProductAsyncNoTracking(int id);
-        Task<Tuple<List<ProductEntity>, int>> GetByFilterPagedAsync(ProductFilterPageReqDto request);
+       // Task<ProductEntity> FetchProductAsync(int id);
+       // Task<ProductEntity> FetchProductAsyncNoTracking(int id);
+        Task<Tuple<List<ProductEntity>, int>> GetByFilterPagedAsync(ProductFilterPage request);
         #endregion
     }
 }

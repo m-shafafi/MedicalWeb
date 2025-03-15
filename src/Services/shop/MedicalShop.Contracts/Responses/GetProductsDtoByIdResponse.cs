@@ -3,4 +3,4 @@ using MedicalShop.Contracts.Dtos.Products;
 
 namespace MedicalShop.Contracts.Responses;
 
-public record GetProductByIdResponse(ProductsDto ProductsDto);
+public record GetProductByIdResponse(ProductDto ProductDto);

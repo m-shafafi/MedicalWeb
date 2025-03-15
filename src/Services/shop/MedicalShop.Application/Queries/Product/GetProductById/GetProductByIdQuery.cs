@@ -1,6 +1,11 @@
 ﻿using MediatR;
+using MedicalShop.Contracts.Dtos.Products;
 using MedicalShop.Contracts.Responses;
+using MedicalShop.Domain.Base;
 
 namespace MedicalShop.Application.Queries.Medicals.GetMedicalById;
 
-public record GetProductByIdQuery(int Id) : IRequest<GetProductByIdResponse>;
+public class GetProductsListQuery : ProductFilterPageReqDto, IRequest<PaginitionResDto<List<ProductResDto>>>
+{
+
+}

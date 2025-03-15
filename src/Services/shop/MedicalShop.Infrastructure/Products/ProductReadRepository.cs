@@ -1,14 +1,7 @@
-﻿using MedicalShop.Domain.Menu;
-using MedicalShop.Domain.Menu.Models;
-using MedicalShop.Domain.News.Models;
+﻿using MedicalShop.Contracts.Repositories;
 using MedicalShop.Domain.Products.Models;
 using MedicalShop.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MedicalShop.Domain.Menu
 {
@@ -45,7 +38,7 @@ namespace MedicalShop.Domain.Menu
         {
             return await _dbContext.products.FirstOrDefaultAsync(p => p.Id == id);
         }
-        public async Task<Tuple<List<ProductEntity>, int>> GetByFilterPagedAsync(ProductFilterPageReqDto request)
+        public async Task<Tuple<List<ProductEntity>, int>> GetByFilterPagedAsync(ProductFilterPage request)
         {
             var filteredProducts = _dbContext.products.AsQueryable();
             if (request.Id != 0)
