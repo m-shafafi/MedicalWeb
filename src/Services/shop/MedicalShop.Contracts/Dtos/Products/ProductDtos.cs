@@ -1,6 +1,6 @@
 ﻿namespace MedicalShop.Contracts.Dtos.Products;
 
-public class ProductDto :ProductDto
+public class ProductDto 
 {
 
     public string Name { get; set; }

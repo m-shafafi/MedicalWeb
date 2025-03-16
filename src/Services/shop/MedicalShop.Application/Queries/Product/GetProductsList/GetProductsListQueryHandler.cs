@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using MapsterMapper;
 using MediatR;
-using Products.Domain;
-using Products.Domain.Base;
-using Products.Domain.Products;
+using MedicalShop.Contracts.Dtos.Products;
+using MedicalShop.Domain.Base;
+using MedicalShop.Domain.UnitOfWork.Product;
 
 namespace Products.Application.Products.Queries.GetProductsList
 {
-    internal class GetProductsListQueryHandler:IRequestHandler<GetProductsListQuery, PaginitionResDto<List<ProductResDto>>>
+    internal class GetProductsListQueryHandler : IRequestHandler<GetProductsListQuery, PaginitionResDto<List<ProductResDto>>>
     {
 
         private readonly IReadUnitOfWork _readUnitOfWork;

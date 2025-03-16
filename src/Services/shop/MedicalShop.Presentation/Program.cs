@@ -8,10 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApplicationDbContext>(opt =>
-{
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConnectionString"));
-});
+
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("CorsPolicy", policyBuilder =>
@@ -20,7 +17,7 @@ builder.Services.AddCors(opt =>
     });
 });
 
-builder.Services.AddApplication();
+builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddExceptionHandler<ExceptionHandler>();
 
 var app = builder.Build();
@@ -30,7 +27,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
      using var serviceScope = app.Services.CreateScope();
-    using var dbContext = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
+    using var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 }
 
 app.UseHttpsRedirection();

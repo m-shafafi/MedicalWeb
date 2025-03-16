@@ -3,30 +3,29 @@ using Medicals.Application.Commands.Medicals.CreateMedical;
 using Medicals.Application.Commands.Medicals.DeleteMedical;
 using Medicals.Presentation.Extensions;
 using MedicalShop.Application.Commands.Medicals.UpdateProduct;
-using MedicalShop.Application.Queries.Medicals.GetMedicalById;
-using MedicalShop.Application.Queries.Product.GetProduct;
 using MedicalShop.Contracts.Requests.Common;
 using MedicalShop.Contracts.Requests.Medicals;
 using Microsoft.AspNetCore.Mvc;
+using Products.Application.Products.Queries.GetProductsList;
 namespace Medicals.Presentation.Modules;
 
 public static class ProductsModuleModule
 {
     public static void AddMedicalsEndpoints(this IEndpointRouteBuilder app)
     {
-        app.MapGet("/api/Medicals", async (IMediator mediator, [FromQuery] int pageSize, [FromQuery] int pageNumber, CancellationToken ct) =>
-        {
-            var paginatedMedicalDtos = await mediator.Send(new GetProductQuery
-                (new PaginationParams { PageSize = pageSize, PageNumber = pageNumber }), ct);
-            return Results.Extensions.OkPaginationResult(paginatedMedicalDtos.PageSize, paginatedMedicalDtos.CurrentPage,
-                paginatedMedicalDtos.TotalCount, paginatedMedicalDtos.TotalPages, paginatedMedicalDtos.Items);
-        }).WithTags("Medicals");
+        //app.MapGet("/api/Medicals", async (IMediator mediator, [FromQuery] int pageSize, [FromQuery] int pageNumber, CancellationToken ct) =>
+        //{
+        //    var paginatedMedicalDtos = await mediator.Send(new GetProductsListQuery
+        //        (new PaginationParams { PageSize = pageSize, PageNumber = pageNumber }), ct);
+        //    return Results.Extensions.OkPaginationResult(paginatedMedicalDtos.PageSize, paginatedMedicalDtos.CurrentPage,
+        //        paginatedMedicalDtos.TotalCount, paginatedMedicalDtos.TotalPages, paginatedMedicalDtos.Items);
+        //}).WithTags("Medicals");
 
-        app.MapGet("/api/Medicals/{id}", async (IMediator mediator, int id, CancellationToken ct) =>
-        {
-            var Medical = await mediator.Send(new GetProductByIdQuery(id), ct);
-            return Results.Ok(Medical);
-        }).WithTags("Medicals");
+        //app.MapGet("/api/Medicals/{id}", async (IMediator mediator, int id, CancellationToken ct) =>
+        //{
+        //    var Medical = await mediator.Send(new GetProductsListQuery(id), ct);
+        //    return Results.Ok(Medical);
+        //}).WithTags("Medicals");
 
         app.MapPost("/api/Medicals", async (IMediator mediator, CreateProductRequest createProductRequest,
             CancellationToken ct) =>

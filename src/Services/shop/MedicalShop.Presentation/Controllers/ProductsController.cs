@@ -24,7 +24,7 @@ namespace MedicalShop.Presentation.Controllers
             return "value";
         }
         [HttpPost]
-        public async Task<ProductsDto> Post(CreateProductCommand request)
+        public async Task<ProductDto> Post(CreateProductCommand request)
         {
             return await _mediator.Send(request);
         }
