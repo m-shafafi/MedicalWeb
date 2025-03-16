@@ -1,6 +1,7 @@
 using Medicals.Presentation.Modules;
 using MedicalShop.Application;
 using MedicalShop.Infrastructure;
+using MedicalShop.Presentation;
 using MedicalShop.Presentation.Handlers;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,10 @@ builder.Services.AddCors(opt =>
 
 builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddExceptionHandler<ExceptionHandler>();
+builder.AddServiceRegistery();
+builder.AddInfrastructureServices();
+builder.AddApplicationServices();
+builder.AddMessagingConfiguration();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

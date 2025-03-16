@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Medicals.Application.Commands.Medicals.CreateMedical;
 
-public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ProductDto>
+public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ProductResDto>
 {
     private readonly IWriteUnitOfWork _writeUnitOfWork;
     private readonly IMapper _mapper;
@@ -25,7 +25,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
         _publishEndPoint = publishEndpoint;
     }
 
-    public async Task<ProductDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public async Task<ProductResDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
         var newProduct = _mapper.Map<ProductEntity>(request);
         var addedProduct = await _writeUnitOfWork.ProductWriteRepository.AddProductAsync(newProduct);
@@ -45,6 +45,6 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
             Rating = addedProduct.Rating,
         };
         await _publishEndPoint.Publish(addProductEvent);
-        return _mapper.Map<ProductDto>(addedProduct);
+        return _mapper.Map<ProductResDto>(addedProduct);
     }
 }

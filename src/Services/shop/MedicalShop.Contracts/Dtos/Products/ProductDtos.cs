@@ -30,5 +30,17 @@ public class ProductFilterPageReqDto
 }
 
 
-public record ProductResDto(int CategoryID);
-public record ProductReqDto(int CategoryID);
+public class ProductReqDto : ProductDto
+{
+
+    public int CategoryId { get; set; }
+
+}
+
+public class ProductResDto : ProductDto
+{
+    public int CategoryId { get; set; }
+    public string CategoryTitle_Id { get; set; }
+    public string CategoryTitle { get; set; }
+
+}

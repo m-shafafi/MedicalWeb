@@ -2,6 +2,35 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AutoMapper/14.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[12.0.1]",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -73,6 +102,203 @@
         },
         "runtime": {
           "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GraphQL/8.4.1": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL-Parser": "9.5.0",
+          "GraphQL.Analyzers": "8.4.1"
+        },
+        "compile": {
+          "lib/net6.0/GraphQL.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/GraphQL.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GraphQL-Parser/9.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/GraphQLParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/GraphQLParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GraphQL.Analyzers/8.4.1": {
+        "type": "package"
+      },
+      "GraphQL.DataLoader/4.6.1": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL": "4.6.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.DataLoader.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.DataLoader.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GraphQL.NewtonsoftJson/4.6.1": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL": "4.6.1",
+          "Newtonsoft.Json": "12.0.3",
+          "System.Buffers": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.NewtonsoftJson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.NewtonsoftJson.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GraphQL.Server.Core/5.2.2": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL.DataLoader": "[4.6.1, 5.0.0)",
+          "GraphQL.SystemReactive": "[4.6.1, 5.0.0)",
+          "Microsoft.Extensions.Options": "3.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Server.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Server.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GraphQL.Server.Transports.AspNetCore/5.2.2": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL.Server.Core": "[5.2.2, 6.0.0)"
+        },
+        "compile": {
+          "lib/net6.0/GraphQL.Server.Transports.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/GraphQL.Server.Transports.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "GraphQL.Server.Transports.AspNetCore.SystemTextJson/5.2.2": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL.Server.Transports.AspNetCore": "[5.2.2, 6.0.0)",
+          "GraphQL.Server.Transports.Subscriptions.Abstractions": "[5.2.2, 6.0.0)",
+          "GraphQL.SystemTextJson": "4.6.1",
+          "System.IO.Pipelines": "5.0.1"
+        },
+        "compile": {
+          "lib/net6.0/GraphQL.Server.Transports.AspNetCore.SystemTextJson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/GraphQL.Server.Transports.AspNetCore.SystemTextJson.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "GraphQL.Server.Transports.Subscriptions.Abstractions/5.2.2": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL.NewtonsoftJson": "[4.6.1, 5.0.0)",
+          "GraphQL.Server.Core": "[5.2.2, 6.0.0)",
+          "GraphQL.SystemReactive": "[4.6.1, 5.0.0)",
+          "Microsoft.Extensions.Logging": "3.1.0",
+          "System.Threading.Tasks.Dataflow": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Server.Transports.Subscriptions.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Server.Transports.Subscriptions.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GraphQL.Server.Ui.GraphiQL/8.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GraphQL.Server.Ui.GraphiQL.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/GraphQL.Server.Ui.GraphiQL.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "GraphQL.SystemReactive/4.6.1": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL": "4.6.1",
+          "System.Reactive.Core": "4.4.1",
+          "System.Reactive.Linq": "4.4.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.SystemReactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.SystemReactive.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GraphQL.SystemTextJson/4.6.1": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL": "4.6.1",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.1/GraphQL.SystemTextJson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/GraphQL.SystemTextJson.dll": {
             "related": ".xml"
           }
         }
@@ -158,6 +384,40 @@
           }
         }
       },
+      "MassTransit.Extensions.DependencyInjection/7.3.1": {
+        "type": "package",
+        "dependencies": {
+          "MassTransit": "7.3.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MassTransit.RabbitMQ/8.3.7": {
+        "type": "package",
+        "dependencies": {
+          "MassTransit": "8.3.7",
+          "RabbitMQ.Client": "7.1.1"
+        },
+        "compile": {
+          "lib/net8.0/MassTransit.RabbitMqTransport.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MassTransit.RabbitMqTransport.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MediatR/12.4.1": {
         "type": "package",
         "dependencies": {
@@ -188,24 +448,18 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/8.0.1": {
+      "MediatR.Extensions.Microsoft.DependencyInjection/10.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OpenApi": "1.4.3"
+          "MediatR": "10.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
         "compile": {
-          "lib/net8.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
         },
         "runtime": {
-          "lib/net8.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+          "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
       },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
@@ -1194,6 +1448,36 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "RabbitMQ.Client/7.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Pipelines": "8.0.0",
+          "System.Threading.RateLimiting": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
         "type": "package",
         "dependencies": {
@@ -1387,6 +1671,15 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "System.Buffers/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
       },
       "System.ClientModel/1.0.0": {
         "type": "package",
@@ -1695,6 +1988,52 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "System.Reactive/4.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/_._": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/System.Reactive.targets": {}
+        }
+      },
+      "System.Reactive.Core/4.4.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.4.1",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Reactive.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reactive.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Reactive.Linq/4.4.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.4.1",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Reactive.Linq.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reactive.Linq.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Reflection.Metadata/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -1972,6 +2311,35 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "System.Threading.RateLimiting/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Threading.Tasks.Dataflow/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Threading.Tasks.Extensions/4.5.4": {
         "type": "package",
         "compile": {
@@ -2017,9 +2385,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "AutoMapper": "14.0.0",
           "EventBus.Messages": "1.0.0",
-          "FluentValidation": "11.11.0",
-          "FluentValidation.DependencyInjectionExtensions": "11.11.0",
           "Mapster": "7.4.0",
           "Mapster.DependencyInjection": "1.0.1",
           "MassTransit": "8.3.7",
@@ -2079,6 +2446,35 @@
     }
   },
   "libraries": {
+    "AutoMapper/14.0.0": {
+      "sha512": "OC+1neAPM4oCCqQj3g2GJ2shziNNhOkxmNB9cVS8jtx4JbgmRzLcUOxB9Tsz6cVPHugdkHgCaCrTjjSI0Z5sCQ==",
+      "type": "package",
+      "path": "automapper/14.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.14.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net8.0/AutoMapper.dll",
+        "lib/net8.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "sha512": "+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -2157,6 +2553,211 @@
         "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
+    "GraphQL/8.4.1": {
+      "sha512": "IYfEKuRsJHRmzyH0zQ0cGkwjXQRj4nk+8Gjvki8VZ6Vaz1bn09EHFJU3lvqJDmufsE8nDIcpu4MhgIkmTUsHow==",
+      "type": "package",
+      "path": "graphql/8.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "graphql.8.4.1.nupkg.sha512",
+        "graphql.nuspec",
+        "lib/net5.0/GraphQL.dll",
+        "lib/net5.0/GraphQL.xml",
+        "lib/net6.0/GraphQL.dll",
+        "lib/net6.0/GraphQL.xml",
+        "lib/netstandard2.0/GraphQL.dll",
+        "lib/netstandard2.0/GraphQL.xml",
+        "lib/netstandard2.1/GraphQL.dll",
+        "lib/netstandard2.1/GraphQL.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL-Parser/9.5.0": {
+      "sha512": "5XWJGKHdVi8pyD4P0EglmJmlXEGs0HzvGlEBf3+/Ve1jLYBBKIOkKvY0Ej17b9Kn1bbBxkrmghqbmsMbkLL1nQ==",
+      "type": "package",
+      "path": "graphql-parser/9.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "graphql-parser.9.5.0.nupkg.sha512",
+        "graphql-parser.nuspec",
+        "lib/net6.0/GraphQLParser.dll",
+        "lib/net6.0/GraphQLParser.xml",
+        "lib/netstandard2.0/GraphQLParser.dll",
+        "lib/netstandard2.0/GraphQLParser.xml",
+        "lib/netstandard2.1/GraphQLParser.dll",
+        "lib/netstandard2.1/GraphQLParser.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Analyzers/8.4.1": {
+      "sha512": "m6oPs7f1RArNC67x+tD4xlKLoQZng3Lsl4MbQm8M1gRwk57jf0whtdCSAcvIxVUpt0ik7ggfAK+JuU3ZJyJheQ==",
+      "type": "package",
+      "path": "graphql.analyzers/8.4.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "analyzers/dotnet/cs/GraphQL.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/GraphQL.Analyzers.dll",
+        "graphql.analyzers.8.4.1.nupkg.sha512",
+        "graphql.analyzers.nuspec",
+        "logo.64x64.png",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "GraphQL.DataLoader/4.6.1": {
+      "sha512": "5islwiz9MebXcWhOjJJzW+lp8sDcw/fiQk2qHAkfQlgOpeeC4iZzJXfHOlxe3axZFE2Y+5vHxlIBU/Rce/pfyQ==",
+      "type": "package",
+      "path": "graphql.dataloader/4.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "graphql.dataloader.4.6.1.nupkg.sha512",
+        "graphql.dataloader.nuspec",
+        "lib/netstandard2.0/GraphQL.DataLoader.dll",
+        "lib/netstandard2.0/GraphQL.DataLoader.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.NewtonsoftJson/4.6.1": {
+      "sha512": "lVc37iwg1YfPlKfoewT/S3+8KJqRVy3JrrA5sWy5V0cS12B9Bg8NvTOyb2chzCFoxl5p1nvuSETlI0cRcIsQqQ==",
+      "type": "package",
+      "path": "graphql.newtonsoftjson/4.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "graphql.newtonsoftjson.4.6.1.nupkg.sha512",
+        "graphql.newtonsoftjson.nuspec",
+        "lib/netstandard2.0/GraphQL.NewtonsoftJson.dll",
+        "lib/netstandard2.0/GraphQL.NewtonsoftJson.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Server.Core/5.2.2": {
+      "sha512": "jH66EcOOOSkFYDCaO/OAVEgCugGCxknsnlIYVxxAt0kbenOWQa0Xf2FNzAU0hGKBZlerTSVUtL3piMSCtqP75w==",
+      "type": "package",
+      "path": "graphql.server.core/5.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "graphql.server.core.5.2.2.nupkg.sha512",
+        "graphql.server.core.nuspec",
+        "lib/netstandard2.0/GraphQL.Server.Core.dll",
+        "lib/netstandard2.0/GraphQL.Server.Core.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Server.Transports.AspNetCore/5.2.2": {
+      "sha512": "dUdlNk6XBgDqMLAibYBVo8WeagfAgHk2DYNxR6ZTOt2APbjQ0E9qX2Kgq+KrBHFvnSNOSNkIFvZ2uUxN+oJHfQ==",
+      "type": "package",
+      "path": "graphql.server.transports.aspnetcore/5.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "graphql.server.transports.aspnetcore.5.2.2.nupkg.sha512",
+        "graphql.server.transports.aspnetcore.nuspec",
+        "lib/net5.0/GraphQL.Server.Transports.AspNetCore.dll",
+        "lib/net5.0/GraphQL.Server.Transports.AspNetCore.xml",
+        "lib/net6.0/GraphQL.Server.Transports.AspNetCore.dll",
+        "lib/net6.0/GraphQL.Server.Transports.AspNetCore.xml",
+        "lib/netcoreapp3.1/GraphQL.Server.Transports.AspNetCore.dll",
+        "lib/netcoreapp3.1/GraphQL.Server.Transports.AspNetCore.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Server.Transports.AspNetCore.SystemTextJson/5.2.2": {
+      "sha512": "OQUtFgqZqpyJ0WWh3oj7uMZg/WnLWekBXNoNDE3ag7KQaFrVeKwnWf4R1Z/gsXIdTkcnD0Yxi+vjAEqB70Xf5w==",
+      "type": "package",
+      "path": "graphql.server.transports.aspnetcore.systemtextjson/5.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "graphql.server.transports.aspnetcore.systemtextjson.5.2.2.nupkg.sha512",
+        "graphql.server.transports.aspnetcore.systemtextjson.nuspec",
+        "lib/net5.0/GraphQL.Server.Transports.AspNetCore.SystemTextJson.dll",
+        "lib/net5.0/GraphQL.Server.Transports.AspNetCore.SystemTextJson.xml",
+        "lib/net6.0/GraphQL.Server.Transports.AspNetCore.SystemTextJson.dll",
+        "lib/net6.0/GraphQL.Server.Transports.AspNetCore.SystemTextJson.xml",
+        "lib/netcoreapp3.1/GraphQL.Server.Transports.AspNetCore.SystemTextJson.dll",
+        "lib/netcoreapp3.1/GraphQL.Server.Transports.AspNetCore.SystemTextJson.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Server.Transports.Subscriptions.Abstractions/5.2.2": {
+      "sha512": "C09e/a9dkJNEQfNz0MM8dQUMAARoaTUFaTZRZ09Wk1VnIsydWzS0HJACoRwMmRT/lpNk+iIsb2v+eubMKVKIDQ==",
+      "type": "package",
+      "path": "graphql.server.transports.subscriptions.abstractions/5.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "graphql.server.transports.subscriptions.abstractions.5.2.2.nupkg.sha512",
+        "graphql.server.transports.subscriptions.abstractions.nuspec",
+        "lib/netstandard2.0/GraphQL.Server.Transports.Subscriptions.Abstractions.dll",
+        "lib/netstandard2.0/GraphQL.Server.Transports.Subscriptions.Abstractions.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Server.Ui.GraphiQL/8.2.0": {
+      "sha512": "4HsCtbsXkv/mzeDfHcc2lpc9wDXf+3EJ7qp8UX3Vq59MUTvR5Hktb7eBt/S1+jtzzfjs+UqcwR0QLGlX2SIZYg==",
+      "type": "package",
+      "path": "graphql.server.ui.graphiql/8.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "graphql.server.ui.graphiql.8.2.0.nupkg.sha512",
+        "graphql.server.ui.graphiql.nuspec",
+        "lib/net8.0/GraphQL.Server.Ui.GraphiQL.dll",
+        "lib/net8.0/GraphQL.Server.Ui.GraphiQL.xml",
+        "lib/netcoreapp3.1/GraphQL.Server.Ui.GraphiQL.dll",
+        "lib/netcoreapp3.1/GraphQL.Server.Ui.GraphiQL.xml",
+        "lib/netstandard2.0/GraphQL.Server.Ui.GraphiQL.dll",
+        "lib/netstandard2.0/GraphQL.Server.Ui.GraphiQL.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.SystemReactive/4.6.1": {
+      "sha512": "HSbEt/udP9z5G4O1CNmJio1slCuMJZqZ7kKhCTEWfQOYjD4c1rZseuN3T9NF+VnsF197Thx1xh68DNK0aPZ+Mw==",
+      "type": "package",
+      "path": "graphql.systemreactive/4.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "graphql.systemreactive.4.6.1.nupkg.sha512",
+        "graphql.systemreactive.nuspec",
+        "lib/netstandard2.0/GraphQL.SystemReactive.dll",
+        "lib/netstandard2.0/GraphQL.SystemReactive.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.SystemTextJson/4.6.1": {
+      "sha512": "oG+0N7cdDHVGI2jIG7zvgrwhSkf042KzgZT2X1l8aIkuHqgqpi+IGzzbuorssKRMSnvaZ5ksL4loFi7VCNI8Xw==",
+      "type": "package",
+      "path": "graphql.systemtextjson/4.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "graphql.systemtextjson.4.6.1.nupkg.sha512",
+        "graphql.systemtextjson.nuspec",
+        "lib/netstandard2.0/GraphQL.SystemTextJson.dll",
+        "lib/netstandard2.0/GraphQL.SystemTextJson.xml",
+        "lib/netstandard2.1/GraphQL.SystemTextJson.dll",
+        "lib/netstandard2.1/GraphQL.SystemTextJson.xml",
+        "logo.64x64.png"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -2261,6 +2862,41 @@
         "mt-logo-small.png"
       ]
     },
+    "MassTransit.Extensions.DependencyInjection/7.3.1": {
+      "sha512": "s1gnkYUngHNP9m2+Jx1vuUAvoVm4KB3oVbtFJUlXNtBBzhRFq1N3Y0w5iiew60ZBLm0j0RQcSRbI0ahMOkL+og==",
+      "type": "package",
+      "path": "masstransit.extensions.dependencyinjection/7.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll",
+        "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.xml",
+        "masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",
+        "masstransit.extensions.dependencyinjection.nuspec",
+        "mt-logo-small.png"
+      ]
+    },
+    "MassTransit.RabbitMQ/8.3.7": {
+      "sha512": "in/vKWUAVy3Xfx0pZ8ZZRATlKISXYta63U2U3xDYy6f31M+IgyKNvUxMsLQZTf7EwCperzGlTRr6CLbgJES2Cg==",
+      "type": "package",
+      "path": "masstransit.rabbitmq/8.3.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGet.README.md",
+        "lib/net472/MassTransit.RabbitMqTransport.dll",
+        "lib/net472/MassTransit.RabbitMqTransport.xml",
+        "lib/net8.0/MassTransit.RabbitMqTransport.dll",
+        "lib/net8.0/MassTransit.RabbitMqTransport.xml",
+        "lib/net9.0/MassTransit.RabbitMqTransport.dll",
+        "lib/net9.0/MassTransit.RabbitMqTransport.xml",
+        "lib/netstandard2.0/MassTransit.RabbitMqTransport.dll",
+        "lib/netstandard2.0/MassTransit.RabbitMqTransport.xml",
+        "masstransit.rabbitmq.8.3.7.nupkg.sha512",
+        "masstransit.rabbitmq.nuspec",
+        "mt-logo-small.png"
+      ]
+    },
     "MediatR/12.4.1": {
       "sha512": "0tLxCgEC5+r1OCuumR3sWyiVa+BMv3AgiU4+pz8xqTc+2q1WbUEXFOr7Orm96oZ9r9FsldgUtWvB2o7b9jDOaw==",
       "type": "package",
@@ -2292,19 +2928,17 @@
         "mediatr.contracts.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.OpenApi/8.0.1": {
-      "sha512": "JF0U31SByntKEhZNC8ch3CD87BLZb5AzSujOBppLdvnjYu3W2XZvlsol5hUJfxiaHOp720cUiL6wzG8Bv0fI2Q==",
+    "MediatR.Extensions.Microsoft.DependencyInjection/10.0.1": {
+      "sha512": "mYdfMvpkahCAj4tRfBoeMlUBZa2WthaONdQ4y5TtIyxcZYb5e7AE7c1eITTZVWcQhguxvD8AdExdaiAW6RhrVA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.openapi/8.0.1",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net8.0/Microsoft.AspNetCore.OpenApi.dll",
-        "lib/net8.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.8.0.1.nupkg.sha512",
-        "microsoft.aspnetcore.openapi.nuspec"
+        "gradient_128x128.png",
+        "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll",
+        "mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
+        "mediatr.extensions.microsoft.dependencyinjection.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
@@ -4025,6 +4659,54 @@
         "mono.texttemplating.nuspec"
       ]
     },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "RabbitMQ.Client/7.1.1": {
+      "sha512": "WggKwAQqPyV3h4RADfWgHA8LuVQkOgkh335rn578JZI6BDH8Z1ICztY32vr57NlhbN3eELPjLerPK3P+O/w/Yw==",
+      "type": "package",
+      "path": "rabbitmq.client/7.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net8.0/RabbitMQ.Client.dll",
+        "lib/net8.0/RabbitMQ.Client.xml",
+        "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.xml",
+        "rabbitmq.client.7.1.1.nupkg.sha512",
+        "rabbitmq.client.nuspec"
+      ]
+    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
       "sha512": "BmAf6XWt4TqtowmiWe4/5rRot6GerAeklmOPfviOvwLoF5WwgxcJHAxZtySuyW9r9w+HLILnm8VfJFLCUJYW8A==",
       "type": "package",
@@ -4214,6 +4896,37 @@
         "package-readme.md",
         "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
+      ]
+    },
+    "System.Buffers/4.5.1": {
+      "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "type": "package",
+      "path": "system.buffers/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Buffers.dll",
+        "lib/net461/System.Buffers.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Buffers.dll",
+        "lib/netstandard1.1/System.Buffers.xml",
+        "lib/netstandard2.0/System.Buffers.dll",
+        "lib/netstandard2.0/System.Buffers.xml",
+        "lib/uap10.0.16299/_._",
+        "ref/net45/System.Buffers.dll",
+        "ref/net45/System.Buffers.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.Buffers.dll",
+        "ref/netstandard1.1/System.Buffers.xml",
+        "ref/netstandard2.0/System.Buffers.dll",
+        "ref/netstandard2.0/System.Buffers.xml",
+        "ref/uap10.0.16299/_._",
+        "system.buffers.4.5.1.nupkg.sha512",
+        "system.buffers.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.ClientModel/1.0.0": {
@@ -4671,6 +5384,68 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Reactive/4.4.1": {
+      "sha512": "iSTPeWR9HJhGoNV4WhVlvofuiTjpok1i4E3LPgMdbMqf3jKhFlT9HAlO32lb52NLppWC/4dZQFfUzTytvyXBmw==",
+      "type": "package",
+      "path": "system.reactive/4.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/netcoreapp3.0/System.Reactive.dll",
+        "build/netcoreapp3.0/System.Reactive.targets",
+        "build/netcoreapp3.0/System.Reactive.xml",
+        "buildTransitive/netcoreapp3.0/System.Reactive.targets",
+        "lib/net46/System.Reactive.dll",
+        "lib/net46/System.Reactive.xml",
+        "lib/netcoreapp3.0/_._",
+        "lib/netstandard2.0/System.Reactive.dll",
+        "lib/netstandard2.0/System.Reactive.xml",
+        "lib/uap10.0.16299/System.Reactive.dll",
+        "lib/uap10.0.16299/System.Reactive.pri",
+        "lib/uap10.0.16299/System.Reactive.xml",
+        "lib/uap10.0/System.Reactive.dll",
+        "lib/uap10.0/System.Reactive.pri",
+        "lib/uap10.0/System.Reactive.xml",
+        "system.reactive.4.4.1.nupkg.sha512",
+        "system.reactive.nuspec"
+      ]
+    },
+    "System.Reactive.Core/4.4.1": {
+      "sha512": "YQHJOt8hZvwFelIIfs19t8Jhz5P6NS1ZZccbVUuE1LFyoFZjaUecdYIYykgXzpyj5Rl40XC3xkyuuhHRaAln2w==",
+      "type": "package",
+      "path": "system.reactive.core/4.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/System.Reactive.Core.dll",
+        "lib/net46/System.Reactive.Core.xml",
+        "lib/netstandard2.0/System.Reactive.Core.dll",
+        "lib/netstandard2.0/System.Reactive.Core.xml",
+        "lib/uap10.0/System.Reactive.Core.dll",
+        "lib/uap10.0/System.Reactive.Core.pri",
+        "lib/uap10.0/System.Reactive.Core.xml",
+        "system.reactive.core.4.4.1.nupkg.sha512",
+        "system.reactive.core.nuspec"
+      ]
+    },
+    "System.Reactive.Linq/4.4.1": {
+      "sha512": "wyOVuUyHmPV667REPwcZjFjOlRLX6qSGVcXMye0qUqBAWFB3bu1RO1XLGWZTnf0d67DQHV69kw7tAtTh+4EYyQ==",
+      "type": "package",
+      "path": "system.reactive.linq/4.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/System.Reactive.Linq.dll",
+        "lib/net46/System.Reactive.Linq.xml",
+        "lib/netstandard2.0/System.Reactive.Linq.dll",
+        "lib/netstandard2.0/System.Reactive.Linq.xml",
+        "lib/uap10.0/System.Reactive.Linq.dll",
+        "lib/uap10.0/System.Reactive.Linq.pri",
+        "lib/uap10.0/System.Reactive.Linq.xml",
+        "system.reactive.linq.4.4.1.nupkg.sha512",
+        "system.reactive.linq.nuspec"
       ]
     },
     "System.Reflection.Metadata/6.0.1": {
@@ -5316,6 +6091,61 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Threading.RateLimiting/8.0.0": {
+      "sha512": "7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
+      "type": "package",
+      "path": "system.threading.ratelimiting/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Threading.RateLimiting.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Threading.RateLimiting.targets",
+        "lib/net462/System.Threading.RateLimiting.dll",
+        "lib/net462/System.Threading.RateLimiting.xml",
+        "lib/net6.0/System.Threading.RateLimiting.dll",
+        "lib/net6.0/System.Threading.RateLimiting.xml",
+        "lib/net7.0/System.Threading.RateLimiting.dll",
+        "lib/net7.0/System.Threading.RateLimiting.xml",
+        "lib/net8.0/System.Threading.RateLimiting.dll",
+        "lib/net8.0/System.Threading.RateLimiting.xml",
+        "lib/netstandard2.0/System.Threading.RateLimiting.dll",
+        "lib/netstandard2.0/System.Threading.RateLimiting.xml",
+        "system.threading.ratelimiting.8.0.0.nupkg.sha512",
+        "system.threading.ratelimiting.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Threading.Tasks.Dataflow/5.0.0": {
+      "sha512": "NBp0zSAMZp4muDje6XmbDfmkqw9+qsDCHp+YMEtnVgHEjQZ3Q7MzFTTp3eHqpExn4BwMrS7JkUVOTcVchig4Sw==",
+      "type": "package",
+      "path": "system.threading.tasks.dataflow/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Threading.Tasks.Dataflow.dll",
+        "lib/net461/System.Threading.Tasks.Dataflow.xml",
+        "lib/netstandard1.0/System.Threading.Tasks.Dataflow.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Dataflow.xml",
+        "lib/netstandard1.1/System.Threading.Tasks.Dataflow.dll",
+        "lib/netstandard1.1/System.Threading.Tasks.Dataflow.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Dataflow.xml",
+        "lib/portable-net45+win8+wpa81/System.Threading.Tasks.Dataflow.dll",
+        "lib/portable-net45+win8+wpa81/System.Threading.Tasks.Dataflow.xml",
+        "system.threading.tasks.dataflow.5.0.0.nupkg.sha512",
+        "system.threading.tasks.dataflow.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Threading.Tasks.Extensions/4.5.4": {
       "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
@@ -5404,9 +6234,16 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "FluentValidation.DependencyInjectionExtensions >= 11.11.0",
+      "GraphQL >= 8.4.1",
+      "GraphQL.Server.Transports.AspNetCore.SystemTextJson >= 5.2.2",
+      "GraphQL.Server.Ui.GraphiQL >= 8.2.0",
+      "MassTransit.Extensions.DependencyInjection >= 7.3.1",
+      "MassTransit.RabbitMQ >= 8.3.7",
+      "MediatR.Extensions.Microsoft.DependencyInjection >= 10.0.1",
       "MedicalShop.Application >= 1.0.0",
       "MedicalShop.Infrastructure >= 1.0.0",
-      "Microsoft.AspNetCore.OpenApi >= 8.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.1",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.1",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -5468,9 +6305,37 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "Microsoft.AspNetCore.OpenApi": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
-            "version": "[8.0.1, )"
+            "version": "[12.0.1, )"
+          },
+          "FluentValidation.DependencyInjectionExtensions": {
+            "target": "Package",
+            "version": "[11.11.0, )"
+          },
+          "GraphQL": {
+            "target": "Package",
+            "version": "[8.4.1, )"
+          },
+          "GraphQL.Server.Transports.AspNetCore.SystemTextJson": {
+            "target": "Package",
+            "version": "[5.2.2, )"
+          },
+          "GraphQL.Server.Ui.GraphiQL": {
+            "target": "Package",
+            "version": "[8.2.0, )"
+          },
+          "MassTransit.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[7.3.1, )"
+          },
+          "MassTransit.RabbitMQ": {
+            "target": "Package",
+            "version": "[8.3.7, )"
+          },
+          "MediatR.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[10.0.1, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -5509,5 +6374,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.310/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1107",
+      "level": "Error",
+      "message": "Version conflict detected for AutoMapper. Install/reference AutoMapper 14.0.0 directly to project MedicalShop.Presentation to resolve this issue. \r\n MedicalShop.Presentation -> MedicalShop.Application -> AutoMapper (>= 14.0.0) \r\n MedicalShop.Presentation -> AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 -> AutoMapper (= 12.0.1).",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

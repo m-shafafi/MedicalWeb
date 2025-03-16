@@ -6,9 +6,7 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 {
     public CreateProductCommandValidator()
     {
-        RuleFor(x => x.Id)
-             .NotEmpty()
-             .WithMessage($"{nameof(ProductEntity.Id)} cannot be empty");
+
 
         RuleFor(x => x.Name)
             .NotEmpty()
