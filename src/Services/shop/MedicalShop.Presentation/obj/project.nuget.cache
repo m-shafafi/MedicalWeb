@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6egc00D+Rek=",
+  "dgSpecHash": "h17OtctFev0=",
   "success": false,
-  "projectFilePath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
+  "projectFilePath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\Products.Presentation.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\m-shafafi\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -23,15 +23,12 @@
     "C:\\Users\\m-shafafi\\.nuget\\packages\\graphql.systemreactive\\4.6.1\\graphql.systemreactive.4.6.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\graphql.systemtextjson\\4.6.1\\graphql.systemtextjson.4.6.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\m-shafafi\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
-    "C:\\Users\\m-shafafi\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
-    "C:\\Users\\m-shafafi\\.nuget\\packages\\mapster.dependencyinjection\\1.0.1\\mapster.dependencyinjection.1.0.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\masstransit\\8.3.7\\masstransit.8.3.7.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\masstransit.abstractions\\8.3.7\\masstransit.abstractions.8.3.7.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\masstransit.extensions.dependencyinjection\\7.3.1\\masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\masstransit.rabbitmq\\8.3.7\\masstransit.rabbitmq.8.3.7.nupkg.sha512",
-    "C:\\Users\\m-shafafi\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
-    "C:\\Users\\m-shafafi\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
@@ -39,7 +36,7 @@
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.5.0\\microsoft.codeanalysis.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\4.5.0\\microsoft.codeanalysis.csharp.workspaces.4.5.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\4.5.0\\microsoft.codeanalysis.workspaces.common.4.5.0.nupkg.sha512",
-    "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.6\\microsoft.data.sqlclient.5.1.6.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.1\\microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
     "C:\\Users\\m-shafafi\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.1\\microsoft.data.sqlite.core.8.0.1.nupkg.sha512",
@@ -134,10 +131,10 @@
   ],
   "logs": [
     {
-      "code": "NU1107",
+      "code": "NU1104",
       "level": "Error",
-      "message": "Version conflict detected for AutoMapper. Install/reference AutoMapper 14.0.0 directly to project MedicalShop.Presentation to resolve this issue. \r\n MedicalShop.Presentation -> MedicalShop.Application -> AutoMapper (>= 14.0.0) \r\n MedicalShop.Presentation -> AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 -> AutoMapper (= 12.0.1).",
-      "libraryId": "AutoMapper",
+      "message": "Unable to find project 'G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Application\\MedicalShop.Application.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Application\\MedicalShop.Application.csproj",
       "targetGraphs": [
         "net8.0"
       ]

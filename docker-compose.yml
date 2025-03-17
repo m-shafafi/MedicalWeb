@@ -1,26 +1,4 @@
 services:
-  medicalshop.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=3000
-      - ASPNETCORE_HTTPS_PORTS=3001
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=123
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/medicalshop.pfx
-      - DOCKER_USERNAME=m-shafafi@outlook.com
-      - DOCKER_PASSWORD=M1718993100s!
-    container_name: medicalshop.api
-    image: medicalshop.api
-    build:
-      context: .
-      dockerfile: src/services/Shop/MedicalShop.Presentation/Dockerfile
-    ports:
-      - "3000:3000"
-      - "3001:3001"
-    volumes:
-      - ~/.aspnet/https:/https:ro
-    depends_on:
-      database.server:
-        condition: service_healthy
   database.server:
     image: "mcr.microsoft.com/mssql/server"
     container_name: database.server
@@ -39,14 +17,27 @@ services:
       timeout: 3s
       retries: 10
       start_period: 10s
-      
-  medicalshop.client:
+  products.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=3000
+      - ASPNETCORE_HTTPS_PORTS=3001
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/Products.pfx
+      - DOCKER_USERNAME=m-shafafi@outlook.com
+      - DOCKER_PASSWORD=M1718993100s!
+    container_name: products.api
+    image: products.api
     build:
-      context: MedicalShop.Presentation/Client/medical
-      dockerfile: Dockerfile
-    image: medicalshop.client
-    container_name: medicalshop.client
+      context: .
+      dockerfile: src/services/Products/Products.Presentation/Dockerfile
     ports:
-      - "5000:5000"
-    depends_on: 
-      - medicalshop.api
+      - "3000:3000"
+      - "3001:3001"
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    depends_on:
+      database.server:
+        condition: service_healthy
+    
+  

@@ -2,18 +2,18 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "AutoMapper/14.0.0": {
+      "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Options": "8.0.0"
+          "Microsoft.CSharp": "4.7.0"
         },
         "compile": {
-          "lib/net8.0/AutoMapper.dll": {
+          "lib/netstandard2.1/AutoMapper.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/AutoMapper.dll": {
+          "lib/netstandard2.1/AutoMapper.dll": {
             "related": ".xml"
           }
         }
@@ -316,40 +316,6 @@
           }
         }
       },
-      "Mapster/7.4.0": {
-        "type": "package",
-        "dependencies": {
-          "Mapster.Core": "1.2.1"
-        },
-        "compile": {
-          "lib/net7.0/Mapster.dll": {}
-        },
-        "runtime": {
-          "lib/net7.0/Mapster.dll": {}
-        }
-      },
-      "Mapster.Core/1.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Mapster.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net7.0/Mapster.Core.dll": {}
-        }
-      },
-      "Mapster.DependencyInjection/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Mapster": "7.4.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
-        },
-        "compile": {
-          "lib/net7.0/Mapster.DependencyInjection.dll": {}
-        },
-        "runtime": {
-          "lib/net7.0/Mapster.DependencyInjection.dll": {}
-        }
-      },
       "MassTransit/8.3.7": {
         "type": "package",
         "dependencies": {
@@ -418,24 +384,23 @@
           }
         }
       },
-      "MediatR/12.4.1": {
+      "MediatR/10.0.1": {
         "type": "package",
         "dependencies": {
-          "MediatR.Contracts": "[2.0.1, 3.0.0)",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+          "MediatR.Contracts": "1.0.1"
         },
         "compile": {
-          "lib/net6.0/MediatR.dll": {
+          "lib/netstandard2.1/MediatR.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/MediatR.dll": {
+          "lib/netstandard2.1/MediatR.dll": {
             "related": ".xml"
           }
         }
       },
-      "MediatR.Contracts/2.0.1": {
+      "MediatR.Contracts/1.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/MediatR.Contracts.dll": {
@@ -720,7 +685,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -2371,49 +2336,6 @@
           }
         }
       },
-      "EventBus.Messages/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/EventBus.Messages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EventBus.Messages.dll": {}
-        }
-      },
-      "MedicalShop.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "AutoMapper": "14.0.0",
-          "EventBus.Messages": "1.0.0",
-          "Mapster": "7.4.0",
-          "Mapster.DependencyInjection": "1.0.1",
-          "MassTransit": "8.3.7",
-          "MediatR": "12.4.1",
-          "MediatR.Contracts": "2.0.1",
-          "MedicalShop.Contracts": "1.0.0",
-          "MedicalShop.Infrastructure": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "9.0.3",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.3"
-        },
-        "compile": {
-          "bin/placeholder/MedicalShop.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MedicalShop.Application.dll": {}
-        }
-      },
-      "MedicalShop.Contracts/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/MedicalShop.Contracts.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MedicalShop.Contracts.dll": {}
-        }
-      },
       "MedicalShop.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2428,7 +2350,7 @@
           "bin/placeholder/MedicalShop.Domain.dll": {}
         }
       },
-      "MedicalShop.Infrastructure/1.0.0": {
+      "Products.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -2437,28 +2359,28 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.3"
         },
         "compile": {
-          "bin/placeholder/MedicalShop.Infrastructure.dll": {}
+          "bin/placeholder/Products.Infrastructure.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MedicalShop.Infrastructure.dll": {}
+          "bin/placeholder/Products.Infrastructure.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "AutoMapper/14.0.0": {
-      "sha512": "OC+1neAPM4oCCqQj3g2GJ2shziNNhOkxmNB9cVS8jtx4JbgmRzLcUOxB9Tsz6cVPHugdkHgCaCrTjjSI0Z5sCQ==",
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
       "type": "package",
-      "path": "automapper/14.0.0",
+      "path": "automapper/12.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "automapper.14.0.0.nupkg.sha512",
+        "automapper.12.0.1.nupkg.sha512",
         "automapper.nuspec",
         "icon.png",
-        "lib/net8.0/AutoMapper.dll",
-        "lib/net8.0/AutoMapper.xml"
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
       ]
     },
     "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
@@ -2778,48 +2700,6 @@
         "logo.png"
       ]
     },
-    "Mapster/7.4.0": {
-      "sha512": "RYGoDqvS4WTKIq0HDyPBBVIj6N0mluOCXQ1Vk95JKseMHEsbCXSEGKSlP95oL+s42IXAXbqvHj7p0YaRBUcfqg==",
-      "type": "package",
-      "path": "mapster/7.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net6.0/Mapster.dll",
-        "lib/net7.0/Mapster.dll",
-        "mapster.7.4.0.nupkg.sha512",
-        "mapster.nuspec"
-      ]
-    },
-    "Mapster.Core/1.2.1": {
-      "sha512": "11lokmfliBEMMmjeqxFGNpqGXq6tN96zFqpBmfYeahr4Ybk63oDmeJmOflsATjobYkX248g5Y62oQ2NNnZaeww==",
-      "type": "package",
-      "path": "mapster.core/1.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net6.0/Mapster.Core.dll",
-        "lib/net7.0/Mapster.Core.dll",
-        "mapster.core.1.2.1.nupkg.sha512",
-        "mapster.core.nuspec"
-      ]
-    },
-    "Mapster.DependencyInjection/1.0.1": {
-      "sha512": "LfjnRIwx6WAo3ssq8PFeaHFaUz00BfSG9BhWgXsiDa3H5lDhG0lpMGDF6w2ZnooS4eHYmAv4f77VxmzpvgorNg==",
-      "type": "package",
-      "path": "mapster.dependencyinjection/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net6.0/Mapster.DependencyInjection.dll",
-        "lib/net7.0/Mapster.DependencyInjection.dll",
-        "mapster.dependencyinjection.1.0.1.nupkg.sha512",
-        "mapster.dependencyinjection.nuspec"
-      ]
-    },
     "MassTransit/8.3.7": {
       "sha512": "luJPBitYnwnNbcHen1pcZ8WfyN8vW3mndn6HyKZAYkmpAGekVfUlJabNffDleO2qZisvOwbigau0HSCDK2NPjQ==",
       "type": "package",
@@ -2897,34 +2777,33 @@
         "mt-logo-small.png"
       ]
     },
-    "MediatR/12.4.1": {
-      "sha512": "0tLxCgEC5+r1OCuumR3sWyiVa+BMv3AgiU4+pz8xqTc+2q1WbUEXFOr7Orm96oZ9r9FsldgUtWvB2o7b9jDOaw==",
+    "MediatR/10.0.1": {
+      "sha512": "vnjbk4giDJzJelh34Ygt0eorApCKrRFB7j0pauFPY1oxfO3cEZ7FugBrIOjCM76SDGTOmPFfbfmVnz1t3iFrGA==",
       "type": "package",
-      "path": "mediatr/12.4.1",
+      "path": "mediatr/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
         "gradient_128x128.png",
-        "lib/net6.0/MediatR.dll",
-        "lib/net6.0/MediatR.xml",
-        "lib/netstandard2.0/MediatR.dll",
-        "lib/netstandard2.0/MediatR.xml",
-        "mediatr.12.4.1.nupkg.sha512",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.10.0.1.nupkg.sha512",
         "mediatr.nuspec"
       ]
     },
-    "MediatR.Contracts/2.0.1": {
-      "sha512": "FYv95bNT4UwcNA+G/J1oX5OpRiSUxteXaUt2BJbRSdRNiIUNbggJF69wy6mnk2wYToaanpdXZdCwVylt96MpwQ==",
+    "MediatR.Contracts/1.0.1": {
+      "sha512": "NsRvOxthhkYml4DcBMyJsmym8C4MchioH7wxKVPEg7plFj9Euh/i4IcmZ3Gvgx6+K8obeuhPeJdoBl56wnuo3A==",
       "type": "package",
-      "path": "mediatr.contracts/2.0.1",
+      "path": "mediatr.contracts/1.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "gradient_128x128.png",
+        "lib/net461/MediatR.Contracts.dll",
+        "lib/net461/MediatR.Contracts.xml",
         "lib/netstandard2.0/MediatR.Contracts.dll",
         "lib/netstandard2.0/MediatR.Contracts.xml",
-        "mediatr.contracts.2.0.1.nupkg.sha512",
+        "mediatr.contracts.1.0.1.nupkg.sha512",
         "mediatr.contracts.nuspec"
       ]
     },
@@ -3393,10 +3272,10 @@
         "microsoft.codeanalysis.workspaces.common.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3409,6 +3288,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -3418,7 +3298,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -6206,46 +6086,31 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "EventBus.Messages/1.0.0": {
-      "type": "project",
-      "path": "../../../../BuildingBlocks/EventBus.Messages/EventBus.Messages.csproj",
-      "msbuildProject": "../../../../BuildingBlocks/EventBus.Messages/EventBus.Messages.csproj"
-    },
-    "MedicalShop.Application/1.0.0": {
-      "type": "project",
-      "path": "../MedicalShop.Application/MedicalShop.Application.csproj",
-      "msbuildProject": "../MedicalShop.Application/MedicalShop.Application.csproj"
-    },
-    "MedicalShop.Contracts/1.0.0": {
-      "type": "project",
-      "path": "../MedicalShop.Contracts/MedicalShop.Contracts.csproj",
-      "msbuildProject": "../MedicalShop.Contracts/MedicalShop.Contracts.csproj"
-    },
     "MedicalShop.Domain/1.0.0": {
       "type": "project",
       "path": "../MedicalShop.Domain/MedicalShop.Domain.csproj",
       "msbuildProject": "../MedicalShop.Domain/MedicalShop.Domain.csproj"
     },
-    "MedicalShop.Infrastructure/1.0.0": {
+    "Products.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../MedicalShop.Infrastructure/MedicalShop.Infrastructure.csproj",
-      "msbuildProject": "../MedicalShop.Infrastructure/MedicalShop.Infrastructure.csproj"
+      "path": "../MedicalShop.Infrastructure/Products.Infrastructure.csproj",
+      "msbuildProject": "../MedicalShop.Infrastructure/Products.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "FluentValidation.DependencyInjectionExtensions >= 11.11.0",
+      "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Application\\MedicalShop.Application.csproj",
       "GraphQL >= 8.4.1",
       "GraphQL.Server.Transports.AspNetCore.SystemTextJson >= 5.2.2",
       "GraphQL.Server.Ui.GraphiQL >= 8.2.0",
       "MassTransit.Extensions.DependencyInjection >= 7.3.1",
       "MassTransit.RabbitMQ >= 8.3.7",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 10.0.1",
-      "MedicalShop.Application >= 1.0.0",
-      "MedicalShop.Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.1",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.1",
+      "Products.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -6256,9 +6121,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
-      "projectName": "MedicalShop.Presentation",
-      "projectPath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\MedicalShop.Presentation.csproj",
+      "projectUniqueName": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\Products.Presentation.csproj",
+      "projectName": "Products.Presentation",
+      "projectPath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\Products.Presentation.csproj",
       "packagesPath": "C:\\Users\\m-shafafi\\.nuget\\packages\\",
       "outputPath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Presentation\\obj\\",
       "projectStyle": "PackageReference",
@@ -6284,8 +6149,8 @@
             "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Application\\MedicalShop.Application.csproj": {
               "projectPath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Application\\MedicalShop.Application.csproj"
             },
-            "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Infrastructure\\MedicalShop.Infrastructure.csproj": {
-              "projectPath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Infrastructure\\MedicalShop.Infrastructure.csproj"
+            "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Infrastructure\\Products.Infrastructure.csproj": {
+              "projectPath": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Infrastructure\\Products.Infrastructure.csproj"
             }
           }
         }
@@ -6377,10 +6242,10 @@
   },
   "logs": [
     {
-      "code": "NU1107",
+      "code": "NU1104",
       "level": "Error",
-      "message": "Version conflict detected for AutoMapper. Install/reference AutoMapper 14.0.0 directly to project MedicalShop.Presentation to resolve this issue. \r\n MedicalShop.Presentation -> MedicalShop.Application -> AutoMapper (>= 14.0.0) \r\n MedicalShop.Presentation -> AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 -> AutoMapper (= 12.0.1).",
-      "libraryId": "AutoMapper",
+      "message": "Unable to find project 'G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Application\\MedicalShop.Application.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "G:\\ZhubinShahyad\\MedicalWeb\\src\\Services\\shop\\MedicalShop.Application\\MedicalShop.Application.csproj",
       "targetGraphs": [
         "net8.0"
       ]
