@@ -1,30 +1,34 @@
-using Products.Infrastructure;
+using GraphQL.Server;
+using GraphQL.SystemTextJson;
 using Products.Presentation;
+using Products.Presentation.GQL;
+using Products.Presentation.GQL.Mutations;
+using Products.Presentation.GQL.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddCors(opt =>
-{
-    opt.AddPolicy("CorsPolicy", policyBuilder =>
-    {
-        policyBuilder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5000");
-    });
-});
-
+// Add services to the container.
 builder.AddServiceRegistery();
+
 builder.AddInfrastructureServices();
 builder.AddApplicationServices();
 builder.AddMessagingConfiguration();
+
+builder.Services.AddScoped<AppMutations>();
+builder.Services.AddScoped<AppQueries>();
+builder.Services.AddScoped<AppSchema>();
+
+builder.Services.AddGraphQL().AddSystemTextJson();
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
 
-    using var serviceScope = app.Services.CreateScope();
-    using var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

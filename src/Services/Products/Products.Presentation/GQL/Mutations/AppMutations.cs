@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
 using MediatR;
 
-namespace Products.Api.GQL.Mutations
+namespace Products.Presentation.GQL.Mutations
 {
     public class AppMutations:ObjectGraphType
     {

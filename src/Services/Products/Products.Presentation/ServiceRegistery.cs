@@ -7,6 +7,8 @@ using Products.Application.Behaviours;
 using Products.Domain.UnitOfWork.Product;
 using Products.Infrastructure;
 using System.Text.Json.Serialization;
+using AutoMapper;
+
 
 namespace Products.Presentation;
 public static class ServiceRegistery
@@ -21,19 +23,15 @@ public static class ServiceRegistery
         });
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-
-
-
-
         return builder.Services;
     }
 
     public static IServiceCollection AddInfrastructureServices(this WebApplicationBuilder builder)
     {
-        builder.Services.AddAutoMapper(Assemblies.InfrastructureAssembly);
+        builder.Services.AddAutoMapper(cfg => { }, typeof(ApplicationDbContext).Assembly);
+
         builder.Services.AddDbContext<ApplicationDbContext>(option =>
-            option.UseSqlServer(builder.Configuration.GetConnectionString("ProductDbConn")));
+            option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
         builder.Services.AddScoped<IReadUnitOfWork, ReadUnitOfWork>();
         builder.Services.AddScoped<IWriteUnitOfWork, WriteUnitOfWork>();
         return builder.Services;

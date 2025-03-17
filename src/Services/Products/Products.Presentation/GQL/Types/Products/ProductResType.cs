@@ -2,7 +2,7 @@
 using Products.Domain.Dtos.Products;
 using Products.Domain.Products;
 
-namespace Products.Api.GQL.Types.Products
+namespace Products.Presentation.GQL.Types.Products
 {
     public class ProductResType: ObjectGraphType<ProductResDto>
     {

@@ -5,7 +5,7 @@ using Products.Api.GQL.Types;
 using Products.Api.GQL.Types.Products;
 using Products.Application.Products.Queries.Product.GetProductsList;
 
-namespace Products.Api.GQL.Queries
+namespace Products.Presentation.GQL.Queries
 {
     public static class ProductsQueries
     {

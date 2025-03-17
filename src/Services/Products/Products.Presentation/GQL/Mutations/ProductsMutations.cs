@@ -1,12 +1,12 @@
 ﻿using GraphQL;
 using GraphQL.Types;
 using MediatR;
-using Products.Api.GQL.Types.Products;
+using Products.Presentation.GQL.Types.Products;
 using Products.Application.Products.Commands.Product.CreateMedical;
 using Products.Application.Products.Commands.Product.UpdateProduct;
 using Products.Domain.Dtos.Products;
 
-namespace Products.Api.GQL.Mutations
+namespace Products.Presentation.GQL.Mutations
 {
     public static class ProductsMutations
     {

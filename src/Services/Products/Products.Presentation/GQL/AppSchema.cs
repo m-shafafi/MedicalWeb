@@ -1,8 +1,8 @@
 ﻿using GraphQL.Types;
-using Products.Api.GQL.Mutations;
-using Products.Api.GQL.Queries;
+using Products.Presentation.GQL.Mutations;
+using Products.Presentation.GQL.Queries;
 
-namespace Products.Api.GQL
+namespace Products.Presentation.GQL
 {
     public class AppSchema : Schema
     {

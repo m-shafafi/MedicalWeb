@@ -1,6 +1,6 @@
 ﻿using GraphQL.Types;
 
-namespace Products.Api.GQL.Types.Products
+namespace Products.Presentation.GQL.Types.Products
 {
     public class ProductReqType:InputObjectGraphType
     {

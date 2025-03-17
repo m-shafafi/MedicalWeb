@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
 using MediatR;
 
-namespace Products.Api.GQL.Queries
+namespace Products.Presentation.GQL.Queries
 {
     public class AppQueries: ObjectGraphType
     {
