@@ -38,8 +38,8 @@ namespace Products.Domain.Products.Models
                 builder.Property(p => p.IconUrl).IsRequired().HasMaxLength(50)
                     .HasDefaultValue("https://via.placeholder.com/85.png");
                 builder.Property(p => p.ThumbnailUrl).IsRequired().HasMaxLength(50).HasDefaultValue("https://via.placeholder.com/150x150.png");
-                builder.Property(p => p.CreationDateTime).IsRequired().HasDefaultValue(DateTime.UtcNow);
-                builder.Property(p => p.ModificationDateTime).IsRequired().HasDefaultValue(DateTime.UtcNow);
+                builder.Property(p => p.CreationDateTime).IsRequired().HasDefaultValue(new DateTime(2024, 03, 18));
+                builder.Property(p => p.ModificationDateTime).IsRequired().HasDefaultValue(new DateTime(2024, 03, 18));
 
                 builder.HasData(SeedCategories());
             }
