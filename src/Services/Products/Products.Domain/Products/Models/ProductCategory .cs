@@ -38,8 +38,8 @@ namespace Products.Domain.Products.Models
                 builder.Property(p => p.IconUrl).IsRequired().HasMaxLength(50)
                     .HasDefaultValue("https://via.placeholder.com/85.png");
                 builder.Property(p => p.ThumbnailUrl).IsRequired().HasMaxLength(50).HasDefaultValue("https://via.placeholder.com/150x150.png");
-                builder.Property(p => p.CreationDateTime).IsRequired().HasDefaultValue(new DateTime(2024, 03, 18));
-                builder.Property(p => p.ModificationDateTime).IsRequired().HasDefaultValue(new DateTime(2024, 03, 18));
+                builder.Property(p => p.CreationDateTime).IsRequired().HasDefaultValueSql("GETUTCDATE()");
+                builder.Property(p => p.ModificationDateTime).IsRequired().HasDefaultValueSql("GETUTCDATE()");
 
                 builder.HasData(SeedCategories());
             }
@@ -47,15 +47,18 @@ namespace Products.Domain.Products.Models
             private List<ProductCategory> SeedCategories()
             {
                 var categories = new List<ProductCategory>();
-                string directoryPath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
-                string categorySeedPath = Path.Combine(directoryPath, @"SeedData/CategorySeed.json");
-                using (StreamReader r = new StreamReader(categorySeedPath))
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string categorySeedPath = Path.Combine(baseDirectory, "SeedData", "CategorySeed.json");
+
+                if (!File.Exists(categorySeedPath))
                 {
-                    string json = r.ReadToEnd();
-                    categories = JsonSerializer.Deserialize<List<ProductCategory>>(json);
+                    throw new FileNotFoundException($"Seed file not found: {categorySeedPath}");
                 }
 
-                return categories ?? new();
+                string json = File.ReadAllText(categorySeedPath);
+                categories = JsonSerializer.Deserialize<List<ProductCategory>>(json) ?? new List<ProductCategory>();
+
+                return categories;
             }
         }
     }

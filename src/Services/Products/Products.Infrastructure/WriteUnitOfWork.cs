@@ -1,6 +1,4 @@
-﻿using Products.Domain.Menu;
-using Products.Domain.News.Article;
-using Products.Domain.Products.Repositories;
+﻿using Products.Domain.Products.Repositories;
 using Products.Domain.UnitOfWork.Product;
 using Products.Infrastructure.Products;
 

@@ -1,12 +1,4 @@
-﻿using Products.Domain.Menu;
-using Products.Domain.Menu.Models;
-using Products.Domain.Products.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Products.Domain.Products.Models;
 
 namespace Products.Domain.Products.Repositories
 {

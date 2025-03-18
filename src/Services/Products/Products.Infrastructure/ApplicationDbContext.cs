@@ -1,14 +1,5 @@
-﻿using Products.Domain.Menu;
-using Products.Domain.Menu.Models;
-using Products.Domain.News.Models;
+﻿using Microsoft.EntityFrameworkCore;
 using Products.Domain.Products.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Products.Infrastructure;
