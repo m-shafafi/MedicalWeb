@@ -1,9 +1,9 @@
 ﻿using GraphQL;
 using GraphQL.Types;
 using MediatR;
-using Products.Api.GQL.Types;
-using Products.Api.GQL.Types.Products;
 using Products.Application.Products.Queries.Product.GetProductsList;
+using Products.Presentation.GQL.Types;
+using Products.Presentation.GQL.Types.Products;
 
 namespace Products.Presentation.GQL.Queries
 {
