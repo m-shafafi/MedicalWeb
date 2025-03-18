@@ -19,7 +19,6 @@ builder.Services.AddScoped<AppMutations>();
 builder.Services.AddScoped<AppQueries>();
 builder.Services.AddScoped<AppSchema>();
 
-builder.Services.AddGraphQL().AddSystemTextJson();
 
 
 var app = builder.Build();

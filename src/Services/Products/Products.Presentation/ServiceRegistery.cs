@@ -4,11 +4,12 @@ using MassTransit;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Products.Application.Behaviours;
+using Products.Domain;
 using Products.Domain.UnitOfWork.Product;
 using Products.Infrastructure;
 using System.Text.Json.Serialization;
+using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
-
 
 namespace Products.Presentation;
 public static class ServiceRegistery
@@ -28,10 +29,9 @@ public static class ServiceRegistery
 
     public static IServiceCollection AddInfrastructureServices(this WebApplicationBuilder builder)
     {
-        builder.Services.AddAutoMapper(cfg => { }, typeof(ApplicationDbContext).Assembly);
-
+        builder.Services.AddAutoMapper(Assemblies.InfrastructureAssembly);
         builder.Services.AddDbContext<ApplicationDbContext>(option =>
-            option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
         builder.Services.AddScoped<IReadUnitOfWork, ReadUnitOfWork>();
         builder.Services.AddScoped<IWriteUnitOfWork, WriteUnitOfWork>();
         return builder.Services;
