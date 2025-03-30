@@ -14,7 +14,7 @@ namespace Products.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "brands",
+                name: "Brands",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -27,11 +27,11 @@ namespace Products.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_brands", x => x.Id);
+                    table.PrimaryKey("PK_Brands", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "category",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -50,16 +50,16 @@ namespace Products.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_category", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_category_category_ParentCategoryId",
+                        name: "FK_Categories_Categories_ParentCategoryId",
                         column: x => x.ParentCategoryId,
-                        principalTable: "category",
+                        principalTable: "Categories",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "products",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -79,21 +79,21 @@ namespace Products.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_products", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_products_brands_BrandId",
+                        name: "FK_Products_Brands_BrandId",
                         column: x => x.BrandId,
-                        principalTable: "brands",
+                        principalTable: "Brands",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_products_category_CategoryId",
+                        name: "FK_Products_Categories_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "category",
+                        principalTable: "Categories",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
-                table: "category",
+                table: "Categories",
                 columns: new[] { "Id", "Active", "Description", "ParentCategoryId", "Permalink", "Priority", "Title" },
                 values: new object[,]
                 {
@@ -110,18 +110,18 @@ namespace Products.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_category_ParentCategoryId",
-                table: "category",
+                name: "IX_Categories_ParentCategoryId",
+                table: "Categories",
                 column: "ParentCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_products_BrandId",
-                table: "products",
+                name: "IX_Products_BrandId",
+                table: "Products",
                 column: "BrandId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_products_CategoryId",
-                table: "products",
+                name: "IX_Products_CategoryId",
+                table: "Products",
                 column: "CategoryId");
         }
 
@@ -129,13 +129,13 @@ namespace Products.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "products");
+                name: "Products");
 
             migrationBuilder.DropTable(
-                name: "brands");
+                name: "Brands");
 
             migrationBuilder.DropTable(
-                name: "category");
+                name: "Categories");
         }
     }
 }

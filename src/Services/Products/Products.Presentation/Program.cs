@@ -19,7 +19,9 @@ builder.Services.AddScoped<AppMutations>();
 builder.Services.AddScoped<AppQueries>();
 builder.Services.AddScoped<AppSchema>();
 
-
+builder.Services.AddGraphQL().AddSystemTextJson();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -30,9 +32,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
+app.UseGraphQL<AppSchema>();
+app.UseGraphQLGraphiQL("/ui/graphql");
 app.UseAuthorization();
 
 app.MapControllers();
+
 app.Run();

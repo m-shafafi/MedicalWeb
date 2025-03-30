@@ -16,32 +16,32 @@ namespace Products.Domain.Menu
 
         public async Task<List<ProductCategory>> FetchAllProductCategoryAsync()
         {
-            return await _dbContext.category.Include(p => p.Products).ToListAsync();
+            return await _dbContext.Categories.Include(p => p.Products).ToListAsync();
         }
         public async Task<ProductCategory> FetchProductCategoryAsync(int id)
         {
-            return await _dbContext.category.FirstOrDefaultAsync(p => p.Id == id);
+            return await _dbContext.Categories.FirstOrDefaultAsync(p => p.Id == id);
         }
         public async Task<List<ProductBrand>> FetchAllProductBrandAsync()
         {
-            return await _dbContext.brands.Include(p => p.Name).ToListAsync();
+            return await _dbContext.Brands.Include(p => p.Name).ToListAsync();
         }
         public async Task<ProductBrand> FetchProductBrandAsync(int id)
         {
-            return await _dbContext.brands.FirstOrDefaultAsync(p => p.Id == id);
+            return await _dbContext.Brands.FirstOrDefaultAsync(p => p.Id == id);
 
         }
         public async Task<List<ProductEntity>> FetchAllProductEntityAsync()
         {
-            return await _dbContext.products.Include(p => p.ProductBrand).ToListAsync();
+            return await _dbContext.Products.Include(p => p.ProductBrand).ToListAsync();
         }
         public async Task<ProductEntity> FetchProductEntityAsync(int id)
         {
-            return await _dbContext.products.FirstOrDefaultAsync(p => p.Id == id);
+            return await _dbContext.Products.FirstOrDefaultAsync(p => p.Id == id);
         }
         public async Task<Tuple<List<ProductEntity>, int>> GetByFilterPagedAsync(ProductFilterPageReqDto request)
         {
-            var filteredProducts = _dbContext.products.AsQueryable();
+            var filteredProducts = _dbContext.Products.AsQueryable();
             if (request.Id != 0)
             {
                 filteredProducts = filteredProducts.Where(p => p.Id == request.Id);
@@ -83,7 +83,7 @@ namespace Products.Domain.Menu
 
         public async Task<ProductEntity> GetAsyncNoTracking(int id)
         {
-            return await _dbContext.products.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
+            return await _dbContext.Products.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
         }
     }
 }

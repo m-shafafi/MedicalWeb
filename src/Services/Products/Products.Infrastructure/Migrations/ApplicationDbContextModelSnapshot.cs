@@ -53,7 +53,7 @@ namespace Products.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("brands");
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("Products.Domain.Products.Models.ProductCategory", b =>
@@ -123,7 +123,7 @@ namespace Products.Infrastructure.Migrations
 
                     b.HasIndex("ParentCategoryId");
 
-                    b.ToTable("category");
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
@@ -305,7 +305,7 @@ namespace Products.Infrastructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("products");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Products.Domain.Products.Models.ProductCategory", b =>

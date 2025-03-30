@@ -25,7 +25,7 @@ namespace Products.Infrastructure.Products
         }
         public async Task DeleteProductCategoriesAsync(ProductCategory ProductCategory)
         {
-            _dbContext.category.Remove(ProductCategory);
+            _dbContext.Categories.Remove(ProductCategory);
             await _dbContext.SaveChangesAsync();
         }
         #endregion
@@ -44,7 +44,7 @@ namespace Products.Infrastructure.Products
         }
         public async Task DeleteProductAsync(ProductEntity productEntity)
         {
-            _dbContext.products.Remove(productEntity);
+            _dbContext.Products.Remove(productEntity);
             await _dbContext.SaveChangesAsync();
         }
         #endregion
@@ -63,7 +63,7 @@ namespace Products.Infrastructure.Products
         }
         public async Task DeleteBrandAsync(ProductBrand ProductBrand)
         {
-            _dbContext.brands.Remove(ProductBrand);
+            _dbContext.Brands.Remove(ProductBrand);
             await _dbContext.SaveChangesAsync();
         }
         #endregion

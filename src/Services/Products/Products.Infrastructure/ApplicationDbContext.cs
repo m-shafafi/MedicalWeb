@@ -10,9 +10,9 @@ public class ApplicationDbContext : DbContext
     {
 
     }
-    public DbSet<ProductEntity> products { get; set; }
-    public DbSet<ProductCategory> category { get; set; }
-    public DbSet<ProductBrand> brands { get; set; }
+    public DbSet<ProductEntity> Products { get; set; }
+    public DbSet<ProductCategory> Categories { get; set; }
+    public DbSet<ProductBrand> Brands { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new ProductEntity.ProductConfiguration());
