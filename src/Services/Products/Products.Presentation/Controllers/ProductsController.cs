@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Products.Application.Products.Commands.Product.CreateMedical;
 using Products.Application.Products.Commands.Product.DeleteMedical;
 using Products.Application.Products.Commands.Product.UpdateProduct;
+using Products.Application.Products.Queries.Product.GetProductsList;
+using Products.Domain.Base;
 using Products.Domain.Dtos.Products;
 
 namespace Products.Presentation.Controllers
@@ -22,6 +24,11 @@ namespace Products.Presentation.Controllers
         public string Get(int id)
         {
             return "value";
+        }
+        [HttpGet()]
+        public async Task<PaginitionResDto<List<ProductResDto>>> GetList()
+        {
+            return await _mediator.Send(new GetProductsListQuery());
         }
         [HttpPost]
         public async Task<ProductResDto> Post(CreateProductCommand request)

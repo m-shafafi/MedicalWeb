@@ -4,7 +4,8 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "medicalshop.api": "StartDebugging"
+        "medicalshop.api": "StartDebugging",
+        "products.presentation": "StartDebugging"
       }
     }
   }
